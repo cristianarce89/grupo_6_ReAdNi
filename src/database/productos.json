@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "nombre": "zapatilla",
+    "descripcion": "lorem-ipsun",
+    "precio": "245000",
+    "descuento": "5",
+    "categoria": "hombre",
+    "talla": "40",
+    "marca": "nike",
+    "imagen": "zapatilla.jpg"
+  },
+  {
+    "id": "11",
+    "nombre": "admin",
+    "descripcion": "asdf",
+    "precio": "asfd",
+    "descuento": "asdf",
+    "categoria": "Hombre",
+    "talla": "41",
+    "marca": "Reebok"
+  },
+  {
+    "id": "111",
+    "nombre": "",
+    "descripcion": "",
+    "precio": "",
+    "descuento": "",
+    "categoria": "",
+    "talla": "35",
+    "marca": ""
+  },
+  {
+    "id": "1111",
+    "nombre": "asdf",
+    "descripcion": "asdf",
+    "precio": "asdf",
+    "descuento": "asdf",
+    "categoria": "",
+    "talla": "36",
+    "marca": "Adidas",
+    "imagen": "green.png"
+  },
+  {
+    "id": "11111",
+    "nombre": "asdf",
+    "descripcion": "asdf",
+    "precio": "asdf",
+    "descuento": "asdf",
+    "categoria": "",
+    "talla": "35",
+    "marca": "",
+    "imagen": "logo.png"
+  },
+  {
+    "id": "111111",
+    "nombre": "asdf",
+    "descripcion": "asdf",
+    "precio": "asdf",
+    "descuento": "asf",
+    "categoria": "",
+    "talla": "35",
+    "marca": "",
+    "imagen": "blue.png"
+  }
+]
