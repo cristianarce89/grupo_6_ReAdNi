@@ -15,23 +15,14 @@ var storage = multer.diskStorage({
     }
 })
 const upload = multer({storage})
-
-// const multer = require('multer'),
-//     storage =  multer.diskStorage({
-//         destination: (req, file, cb)=>{
-//             cb(null, path.join('public','images','products'))
-//         },
-//         filename: (req, file, cb)=>{
-//             cb(null, file.originalname)
-//         }
-//     })
-
-// const upload = multer({storage:storage})
 //------------------------------------------------------------------
 
 router.get('/admin', adminController.admin);
 router.get('/productCreate', adminController.productCreate);
-router.post('/productCreate', upload.any(),adminController.save);
-// router.get('/admin/detailProduct/:id', adminController.ver)
+router.post('/productCreate',upload.single('imagen'), adminController.save);
+router.get('/admin/productDetail/:id', adminController.ver);
+router.get('/admin/productEdit/:id', adminController.edit);
+router.put('/admin/productEdit/:id', upload.single('imagen'),adminController.update);
+router.get('/admin/productDelete/:id', adminController.delete);
 
 module.exports = router;

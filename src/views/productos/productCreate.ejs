@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href=/stylesheets/productCreate.css>
     <link rel="stylesheet" href=/stylesheets/footer.css>
-    <title>Readni Creacion de producto</title>
+    <title>Reeadni Creacion de producto</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 
   <div class="container productCreate">
     <!-- en el action ponemos la ruta del formulario que va capturar los datos, en enctype es para que los datos viajen-->
-    <form action="/productCreate" method="POST" class="formulario" enctype="=multipart/form-data">
+    <form action="/productCreate" method="POST" class="formulario" enctype="multipart/form-data">
       <div class="container titulo">
         <h2 class="products-title">Formulario<br> Creación de productos</h2>
       </div>
@@ -32,12 +32,24 @@
         <textarea name="descripcion" id="descripcion" class="formulario__textArea"></textarea>
       </div>
       <div class="row priceProduct">
-        <input type="precio" id="precio" name="precio" class="formulario__input">
-        <label for="precio" class="formulario__label">Precio del producto</label>
+        <input type="number" id="precioAnt" name="precioAnt" class="formulario__input">
+        <label for="precioAnt" class="formulario__label">Precio anterior del producto</label>
+      </div>
+      <div class="row priceProduct">
+        <input type="number" id="precio" name="precio" class="formulario__input">
+        <label for="precio" class="formulario__label">Precio actual del producto</label>
       </div>
       <div class="row discount">
-        <input type="descuento" id="descuento" name="descuento" class="formulario__input">
+        <input type="number" id="descuento" name="descuento" class="formulario__input">
         <label for="descuento" class="formulario__label">Descuento</label>
+      </div>
+      <div class="row discount">
+        <input type="number" id="ranking" name="ranking" class="formulario__input" min="1" max="5">
+        <label for="ranking" class="formulario__label">Valor en estrellas</label>
+      </div>
+      <div class="row nameProduct">
+        <input type="text" id="color" name="color" class="formulario__input">
+        <label for="color" class="formulario__label">Color</label>
       </div>
 
       <div class="row category">
