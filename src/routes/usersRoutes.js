@@ -7,5 +7,6 @@ const usersController = require(path.resolve(__dirname, '../controllers/usersCon
 
 router.get('/login', usersController.login);
 router.get('/register', usersController.register);
+router.get('/users', usersController.users)
 
 module.exports = router;

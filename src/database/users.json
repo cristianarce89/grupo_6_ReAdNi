@@ -1,0 +1,11 @@
+[
+    {
+      "id": 1,
+      "nombre": "carlos",
+      "correo": "carlos@carlos.com",
+      "password": "123456",
+      "telefono": "3111111111",
+      "direccion": "calle 4 n 5-38",
+      "imagen": "carlos.jpg"
+    }
+]

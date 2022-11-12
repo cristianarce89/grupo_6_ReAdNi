@@ -146,3 +146,7 @@ tr:hover td{
 .fa-eye, .fa-pen, .fa-trash{
     color: var(--color-oscuro);
 }
+
+.containerBottons{
+    display: flex;
+}

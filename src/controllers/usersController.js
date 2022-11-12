@@ -9,6 +9,9 @@ const usersController = {
     },
     register: (req,res) => {
         res.render(path.resolve(__dirname, '../views/usuarios/register'));
+    },
+    users: (req, res) => {
+        res.render('../views/usuarios/users.ejs')
     }
 }
 

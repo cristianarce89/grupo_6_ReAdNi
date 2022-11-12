@@ -26,5 +26,19 @@
     "talla": "40",
     "marca": "Reebok",
     "imagen": "TenisReeadni-1667943400208.png"
+  },
+  {
+    "id": 3,
+    "nombre": "ZAPATILLAS DAVID",
+    "descripcion": "Las mejores zapatillas del mundo",
+    "precioAnt": "100000",
+    "precio": "200000",
+    "descuento": "5",
+    "ranking": "5",
+    "color": "verde",
+    "categoria": "Hombre",
+    "talla": "41",
+    "marca": "Nike",
+    "imagen": "TenisReeadni-1668268743925.png"
   }
 ]
