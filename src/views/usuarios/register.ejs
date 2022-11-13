@@ -2,25 +2,26 @@
 <html lang="es">
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Open+Sans:wght@300&family=Roboto:wght@100;400&family=Rubik+Marker+Hatch&display=swap"
-        rel="stylesheet">
+    <%- include('../partials/head.ejs') %>
     <link href="/stylesheets/header.css" rel="stylesheet">
     <link href="/stylesheets/loginregister.css" rel="stylesheet">
     <link href="/stylesheets/footer.css" rel="stylesheet">
-    <link href="styles/normalize.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/8945ba6e2e.js" crossorigin="anonymous"></script>
+    <title>Registro de usuarios</title>
 </head>
 
 <body>
+    <header>
+        <!--------- BARRA NAVEGADOR CELULAR Y TABLET ---------->
+        <%- include('../partials/headerMobile.ejs') %> 
+        <!--------- BARRA NAVEGADOR DESKTOP ---------->
+        <%- include('../partials/headerDesktop.ejs') %> 
+    </header>
     <main class="login-register-container">
         <section class="registro">
             <div class="form-container">
                 <a href="/"><i class="fa-solid fa-circle-left fa-2x"></i></a>
                 <h1>registro</h1>
-                <form action="/views/register" method="POST" enctype="multipart/form-data">
+                <form action="/register" method="POST" enctype="multipart/form-data">
                     <div class="control">
                         <label for="nombre">Nombre completo</label>
                         <input type="text" name="nombre" id="nombre">
@@ -53,9 +54,10 @@
                         <input type="checkbox"><span>Aceptas los terminos y condiciones de nuestro servicio</span>
                     </div>
                     <div class="control">
-                        <a href="/users">
-                            <input id="submit" type="submit" value="Terminar el Registro">
-                        </a>
+
+                        <!-- <input id="submit" type="submit" value="Terminar el Registro"> -->
+                        <button type="submit" class="">Terminar el Registr</button>
+
                     </div>
                 </form>
                 <div class="enlaces">
@@ -67,7 +69,9 @@
         </section>
     </main>
 
-
+    <footer class="container-footer">
+        <%- include('../partials/footer.ejs') %> 
+    </footer>
 </body>
 
 </html>

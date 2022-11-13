@@ -1,11 +1,20 @@
 [
-    {
-      "id": 1,
-      "nombre": "carlos",
-      "correo": "carlos@carlos.com",
-      "password": "123456",
-      "cellphone": "3111111111",
-      "direccion": "calle 4 n 5-38",
-      "imagen": "carlos.jpg"
-    }
+  {
+    "id": 1,
+    "nombre": "carlos",
+    "correo": "carlos@carlos.com",
+    "password": "123456",
+    "cellphone": "3111111111",
+    "direccion": "calle 4 n 5-38",
+    "imagen": "carlos.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Cristian",
+    "email": "cristiancamilo_1989@hotmail.com",
+    "password": "123456",
+    "cellphone": "3137224933",
+    "direccion": "Cra4",
+    "imagen": "UsuariosReeadni-1668349766889.png"
+  }
 ]

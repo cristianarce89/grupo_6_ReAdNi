@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 const multer = require('multer')
 
-const usersController = require(path.resolve(__dirname, '../controllers/usersController'));
+const usersController = require('../controllers/usersController');;
 
 // indicamos en este apartado para guardar archivos con multer el nombre y donde guardarlo
 var storage = multer.diskStorage({
@@ -17,11 +17,12 @@ var storage = multer.diskStorage({
 const upload = multer({storage})
 //------------------------------------------------------------------------------------
 
-router.get('/users', usersController.users)
+router.get('/users', usersController.users);
 router.get('/login', usersController.login);
 router.get('/register', usersController.register);
-// router.get('/users/ver', usersController.ver);
 router.post('/register',upload.single('imagen'), usersController.save);
+router.get('/users/ver/:id', usersController.ver);
+
 // router.get('/users/ver/:id', usersController.ver);
 
 

@@ -31,10 +31,16 @@ const usersController = {
         fs.writeFileSync(path.resolve(__dirname, '../database/users.json'), nuevoUsersGuardar); //writeFileSync me permite guardar el archvio
         res.redirect('/users');
     },
-    // ver: (req,res) => {
-    //     let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'))); 
-    //     res.render('../views/usuarios/ver.ejs'), {users};
-    // }
+    ver: (req,res) => {
+        let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'))); 
+        let miUsers;
+        users.forEach(user =>{
+            if(user.id == req.params.id){
+                miUsers = user;
+            }
+        });
+        res.render(path.resolve(__dirname, '../views/usuarios/ver'), {miUsers})
+    }
 }
 
 module.exports = usersController;
