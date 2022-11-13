@@ -12,6 +12,10 @@ const usersController = {
     },
     users: (req, res) => {
         res.render('../views/usuarios/users.ejs')
+    },
+    ver: (req,res) => {
+        let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'))); 
+        res.render('../views/usuarios/ver'), {users};
     }
 }
 
