@@ -29,16 +29,16 @@
   },
   {
     "id": 3,
-    "nombre": "ZAPATILLAS DAVID",
-    "descripcion": "Las mejores zapatillas del mundo",
-    "precioAnt": "100000",
-    "precio": "200000",
+    "nombre": "zapatillas fabio",
+    "descripcion": "las mejores zapatillas del mundo",
+    "precioAnt": "120000",
+    "precio": "110000",
     "descuento": "5",
     "ranking": "5",
-    "color": "verde",
+    "color": "azul",
     "categoria": "Hombre",
-    "talla": "41",
+    "talla": "42",
     "marca": "Nike",
-    "imagen": "TenisReeadni-1668268743925.png"
+    "imagen": "TenisReeadni-1668305254681.png"
   }
 ]

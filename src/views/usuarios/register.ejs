@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Open+Sans:wght@300&family=Roboto:wght@100;400&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Open+Sans:wght@300&family=Roboto:wght@100;400&family=Rubik+Marker+Hatch&display=swap"
+        rel="stylesheet">
     <link href="/stylesheets/header.css" rel="stylesheet">
     <link href="/stylesheets/loginregister.css" rel="stylesheet">
     <link href="/stylesheets/footer.css" rel="stylesheet">
@@ -11,13 +14,13 @@
     <script src="https://kit.fontawesome.com/8945ba6e2e.js" crossorigin="anonymous"></script>
 </head>
 
-<body> 
+<body>
     <main class="login-register-container">
         <section class="registro">
             <div class="form-container">
                 <a href="/"><i class="fa-solid fa-circle-left fa-2x"></i></a>
                 <h1>registro</h1>
-                <form action="/views/register" method="POST">
+                <form action="/views/register" method="POST" enctype="multipart/form-data">
                     <div class="control">
                         <label for="nombre">Nombre completo</label>
                         <input type="text" name="nombre" id="nombre">
@@ -50,7 +53,9 @@
                         <input type="checkbox"><span>Aceptas los terminos y condiciones de nuestro servicio</span>
                     </div>
                     <div class="control">
-                        <input id="submit" type="submit" value="Terminar el Registro">
+                        <a href="/users">
+                            <input id="submit" type="submit" value="Terminar el Registro">
+                        </a>
                     </div>
                 </form>
                 <div class="enlaces">
@@ -64,4 +69,5 @@
 
 
 </body>
+
 </html>
