@@ -14,9 +14,8 @@
     "imagen": "zapatilla.jpg"
   },
   {
-    "id": 2,
-    "nombre": "prueba",
-    "descripcion": "Las mejores zapatillas",
+    "nombre": "otra prueba",
+    "descripcion": "",
     "precioAnt": "320000",
     "precio": "250000",
     "descuento": "5",
@@ -25,6 +24,8 @@
     "categoria": "Hombre",
     "talla": "40",
     "marca": "Reebok",
+    "oldImagen": "TenisReeadni-1667943400208.png",
+    "id": "2",
     "imagen": "TenisReeadni-1667943400208.png"
   }
 ]
