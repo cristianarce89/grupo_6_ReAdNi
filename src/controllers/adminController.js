@@ -64,8 +64,8 @@ const adminController = {
             return producto;
         })
         let productoActualizar = JSON.stringify(productosUpdate,null,2);
-        fs.writeFileSync(path.resolve(__dirname, '../database/productos.json'), productoActualizar); //writeFileSync me permite guardar el archvio
-        res.redirect('/admin');
+        fs.writeFileSync(path.resolve(__dirname, '../database/productos.json'), productoActualizar);
+        res.redirect('/admin')
     },
     delete: (req,res) =>{
         let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/productos.json')));

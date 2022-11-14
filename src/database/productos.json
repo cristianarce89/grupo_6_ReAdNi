@@ -26,19 +26,5 @@
     "talla": "40",
     "marca": "Reebok",
     "imagen": "TenisReeadni-1667943400208.png"
-  },
-  {
-    "id": 3,
-    "nombre": "zapatillas fabio",
-    "descripcion": "las mejores zapatillas del mundo",
-    "precioAnt": "120000",
-    "precio": "110000",
-    "descuento": "5",
-    "ranking": "5",
-    "color": "azul",
-    "categoria": "Hombre",
-    "talla": "42",
-    "marca": "Nike",
-    "imagen": "TenisReeadni-1668305254681.png"
   }
 ]
