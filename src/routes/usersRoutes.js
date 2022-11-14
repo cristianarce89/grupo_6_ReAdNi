@@ -22,8 +22,8 @@ router.get('/login', usersController.login);
 router.get('/register', usersController.register);
 router.post('/register',upload.single('imagen'), usersController.save);
 router.get('/users/ver/:id', usersController.ver);
-router.get('/users/usersEdit/:id', usersController.edit);
-router.post('/users/usersEdit/:id', upload.single('imagen'),usersController.update);
+router.get('/users/userEdit/:id', usersController.edit);
+router.post('/users/userEdit/:id', upload.single('imagen'),usersController.update);
 
 //---------------------------------------------------------------
 

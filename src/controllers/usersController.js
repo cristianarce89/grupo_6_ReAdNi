@@ -44,8 +44,8 @@ const usersController = {
     edit: (req,res) => {
         let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
         const usersId = req.params.id;
-        let usersEditar = users.find(user => user.id == usersId);
-        res.render (path.resolve(__dirname, '../views/usuarios/register'), {usersEditar});
+        let userEditar = users.find(user => user.id == usersId);
+        res.render (path.resolve(__dirname, '../views/usuarios/register'), {userEditar});
     },
     update: (req,res) => {
         let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));

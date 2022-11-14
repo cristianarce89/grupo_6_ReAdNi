@@ -9,13 +9,14 @@
     "imagen": "carlos.jpg"
   },
   {
-    "id": 2,
     "nombre": "Cristian",
     "email": "cristiancamilo_1989@hotmail.com",
     "password": "123456",
-    "cellphone": "3137224933",
+    "repetir_password": "123456",
+    "cellphone": "3137224934",
     "direccion": "Cra4",
-    "imagen": "UsuariosReeadni-1668349766889.png"
+    "id": "2",
+    "imagen": "UsuariosReeadni-1668445503212.png"
   },
   {
     "id": 3,
