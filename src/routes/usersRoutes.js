@@ -23,6 +23,7 @@ router.get('/register', usersController.register);
 router.post('/register',upload.single('imagen'), usersController.save);
 router.get('/users/ver/:id', usersController.ver);
 router.get('/users/usersEdit/:id', usersController.edit);
+router.post('/users/usersEdit/:id', upload.single('imagen'),usersController.update);
 
 //---------------------------------------------------------------
 

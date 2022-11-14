@@ -46,6 +46,21 @@ const usersController = {
         const usersId = req.params.id;
         let usersEditar = users.find(user => user.id == usersId);
         res.render (path.resolve(__dirname, '../views/usuarios/register'), {usersEditar});
+    },
+    update: (req,res) => {
+        let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+        req.body.id = req.params.id;
+        req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
+        //si la info es igual haga lo del if
+        let usersUpdate = users.map(user => {
+            if(user.id == req.body.id){
+                return user = req.body;
+            }
+            return user;
+        })
+        let userActualizar = JSON.stringify(usersUpdate,null,2);
+        fs.writeFileSync(path.resolve(__dirname, '../database/users.json'), userActualizar);
+        res.redirect('/users');
     }
 }
 
