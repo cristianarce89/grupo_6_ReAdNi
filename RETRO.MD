@@ -1,4 +1,4 @@
-Retrospectiva del sprint uno.
+Retrospectiva del sprint 1.
 
 En el sprint uno se trabajo el boceto del proyecto, para el caso de nosotros Reeadni, por medio de la pagina web Wireframe.
 Anteriormente se consulto en equipo el tema a tratar de nuestro proyecto, nos pusimos de acuerdo con la metodologia de trabajo, y nos asignamos segun la pagina, las tareas a realizar.
@@ -32,7 +32,7 @@ En el primer sprint hubo buena comunicacion, el trabajo se entrego a tiempo, nos
 
 
 --------------------------------------------------------------------------------------------------------------------------------------
-Retrospectiva del sprint dos.
+Retrospectiva del sprint 2.
 
 En el sprint dos se trabajo con un tablero de trabajo el cual usamos el trello.
 Se creo la estructura de archivos utilizando node.js + Express.
@@ -81,7 +81,7 @@ la idea es seguir mejorando en todo el proyecto y como grupo, cada dia vamos apr
 
 ---------------------------------------------------------------------------
 
-Retrospectiva del sprint tres.
+Retrospectiva del sprint 3.
 
 el objetivo de esta reunión o encuentros,  no es otro que mejorar para la próximas reuniones y actividades. queremos  mejorar día a día,ya que para algunos compañeros se dificulta entender  algunos programas, codigos.
 en este sprint hubo mas dificultad, desapego,miedos,temor de hacer mal las cosas. pero con ganas de apredner cada dia .
@@ -110,5 +110,85 @@ dejar de hacer
 el silencio, hay que hablar mas, preguntar mas.
 
 analisis de trabajo en equipo
-somos un equipo bueno, con ganas de aprender y ayudar al otro, hay que avanzar juntos para llegar tos y disfrutar del exito.
+somos un equipo bueno, con ganas de aprender y ayudar al otro, hay que avanzar juntos para llegar todos y disfrutar del exito.
+
+----------------------------------------------------------------------------
+Retrospectiva del sprint 4
+
+Nos toca ahora lograr que el sitio comience a cobrar vida haciendo que todos esos
+formularios y acciones trabajen con productos y usuarios reales almacenados en formato
+JSON.
+
+comenzar hacer
+Realizar la planeacion del sprin y trabajar en equipo
+Realizar,actuliazar, implementar la retrospectiva y el tablero.
+Definir los campos necesarios para los productos y generar archivo JSON
+Definir los campos necesarios para los usuarios y generar archivo JSON y
+El crud delproducto.
+
+hacer mas
+hacer mas consultas, buscar en google las dudas , buscar la ayuda de los compañeros e incluso fuera del grupo, para entender mas los temas , mirar màs el playground.
+
+continuar haciendo
+Dividirnos el proyecto e ir avanzando con las tareas programadas individualmente, tener en cuenta que si no entendemos, tenemos todo el espacio y la confianza para reportarlo, discutirlo, hablarlo y hacerlo juntos .
+
+hacer menos
+no preocuparnos por como van los otos grupos , no tener pena por que unos saben mas que otros y seguir intentandolo, todos aprenden a su ritmo.
+
+dejar de hacer
+el silencio, hay que hablar mas, preguntar mas.
+
+analisis de trabajo en equipo
+
+somos un equipo bueno, con ganas de aprender y ayudar al otro, hay que avanzar juntos para llegar todos juntos  y disfrutar del exito de este bello curso.
+cuando aplicamos agilidad: encontrar los fallos y puntos
+de mejora lo antes posible en el proceso de desarrollo. No es casualidad, a medida que
+avanzamos con el armado de un sitio o un producto, se torna más costoso hacer cambios,
+correcciones y ajustes. Pero no solo lo hacemos para ahorrar tiempo o costos, es un momento
+mágico cuando empezamos a ver que nuestro sitio cobra vida 🎩✨🐇, y ahora les toca a
+ ustedes dar la mejor version de si mismos.
+
+-------------------------------------------------------------------------------
+Retrospectiva del sprint 5.
+
+A esta altura deberían tener un sitio dinámico utilizando EJS como motor de plantillas, un CRUD
+de productos funcionando perfectamente con una fuente de datos basada en JSON. Es un buen
+momento para mirar atrás ⌛ y darse cuenta de cuánto avanzaron en tan poco tiempo 🤘😎🤘.
+Nos queda entonces enfocarnos en los usuarios. En esta etapa vamos a estar generando el
+registro, el login, el perfil y, además, vamos a trabajar en las rutas a las cuales podrán acceder
+nuestros huéspedes (los visitantes que no hicieron login) y otras para los usuarios con login.
+
+comenzar hacer
+Realizar la planeacion del sprin y trabajar en equipo
+Realizar,actuliazar, implementar la retrospectiva y el tablero.
+Implementar el registro de usuarios
+Implementar el login de usuarios
+Implementar rutas de huéspedes y de
+usuarios.
+
+hacer mas
+hacer mas consultas, buscar en google las dudas , buscar la ayuda de los profesores y compañeros e incluso  fuera del grupo, para entender màs los temas , mirar mas el playground.
+
+continuar haciendo
+seguir trabajndo juntos, escuchar los aportes, concejos,apoyarnos mas de lo que ya hacemos.
+
+hacer menos
+no tener pena por que unos saben mas que otros y seguir intentandolo, todos aprenden a su ritmo.
+
+dejar de hacer
+el silencio, hay que hablar mas, preguntar mas. tenemos que creernos esto y si podemos , dejar lo negativo
+
+
+analisis de trabajo en equipo.
+
+somos un equipo que desea aprender cada dìa màs, que le tiene miedo a los retos , pero los asume y lo hacemos, hay compañeros mas destacados qque otros, pero somos y nos vemos iguales, compartimos y buscamos que todo salga bien.
+En programación siempre buscamos no repetirnos, así que cuando una
+tarea la estamos haciendo muchas veces en diferentes partes de nuestro código, la
+abstraemos. Es decir, que aislamos ese comportamiento en un bloque de código reutilizable.
+Los middlewares nos permiten justamente eso. Un middleware de aplicación se ejecutará en
+cada pedido del cliente, mientras que un middleware de ruta se ejecutará cada vez que se pida
+esa ruta particular.
+Con estas dos herramientas se pueden hacer cosas muy poderosas. De hecho, cada uno de los
+paquetes que han instalado (Express, EJS, method-override, Multer, etc.) están construidos
+como middlewares. Ahora ya pueden construir los suyos. 😎✌✨
 
