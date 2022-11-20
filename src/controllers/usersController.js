@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const {validationResult} = require('express-validator')
 
 const usersController = {
     users: (req, res) => {
@@ -45,7 +46,7 @@ const usersController = {
         let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
         const usersId = req.params.id;
         let userEditar = users.find(user => user.id == usersId);
-        res.render (path.resolve(__dirname, '../views/usuarios/register'), {userEditar});
+        res.render (path.resolve(__dirname, '../views/usuarios/registerEdit'), {userEditar});
     },
     update: (req,res) => {
         let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
@@ -61,7 +62,29 @@ const usersController = {
         let userActualizar = JSON.stringify(usersUpdate,null,2);
         fs.writeFileSync(path.resolve(__dirname, '../database/users.json'), userActualizar);
         res.redirect('/users');
+    },
+    delete: (req,res) =>{
+        let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+        const userDelete = req.params.id;
+        const userFinal = users.filter(user => user.id != userDelete);
+        let usersGuardar = JSON.stringify(userFinal,null,2)
+        fs.writeFileSync(path.resolve(__dirname, '../database/users.json'), usersGuardar); //writeFileSync me permite guardar el archvio
+        res.redirect('/users');
     }
+
+    // PARTE DE EXPRESS VALIDATOR NO FUNCIONAL
+    // store: (req, res) => {
+    //     let errors = validationResult(req);
+    //     if(!errors.isEmpty()){
+    //         return res.render('/register', {errors:errors.mapped()})
+    //     }
+    //     req.session.nombre = req.body.nombre;
+    //     req.session.email = req.body.email;
+    //     req.session.password = req.body.password;
+    //     req.session.cellphone = req.body.cellphone;
+    //     req.session.direccion = req.body.direccion;
+    //     res.redirect('/');
+    // }
 }
 
 module.exports = usersController;

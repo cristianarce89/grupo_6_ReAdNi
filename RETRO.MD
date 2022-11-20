@@ -181,7 +181,7 @@ el silencio, hay que hablar mas, preguntar mas. tenemos que creernos esto y si p
 
 analisis de trabajo en equipo.
 
-somos un equipo que desea aprender cada dìa màs, que le tiene miedo a los retos , pero los asume y lo hacemos, hay compañeros mas destacados qque otros, pero somos y nos vemos iguales, compartimos y buscamos que todo salga bien.
+somos un equipo que desea aprender cada dìa màs, que le tiene miedo a los retos , pero los asume y lo hacemos, hay compañeros mas destacados que otros, pero somos y nos vemos iguales, compartimos y buscamos que todo salga bien.
 En programación siempre buscamos no repetirnos, así que cuando una
 tarea la estamos haciendo muchas veces en diferentes partes de nuestro código, la
 abstraemos. Es decir, que aislamos ese comportamiento en un bloque de código reutilizable.

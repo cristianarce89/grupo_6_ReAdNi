@@ -6,6 +6,7 @@ const logger = require('morgan');
 const methodOverride = require ('method-override');
 const app = express();
 const session = require('express-session');
+// const userLogsMiddleware = require('./middlewares/userLogs');
 
 // Indicar las vistas
 app.set('views', path.join(__dirname, '/src/views'));
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({ secret: 'Proyecto intregrador Readni secreto', resave: false, saveUninitialized: true }));
+// app.use(userLogsMiddleware);
 
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));

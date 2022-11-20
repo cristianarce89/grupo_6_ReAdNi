@@ -21,33 +21,33 @@
             <div class="form-container">
                 <a href="/"><i class="fa-solid fa-circle-left fa-2x"></i></a>
                 <h1>registro</h1>
-                <form action="/register" method="POST" enctype="multipart/form-data">
+                <form action="/users/userEdit/<%= userEditar.id%>" method="POST" enctype="multipart/form-data">
                     <div class="control">
                         <label for="nombre">Nombre completo</label>
-                        <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
+                        <input type="text" name="nombre" id="nombre" value="<%= userEditar.nombre%>">
                     </div>
                     <div class="control">
                         <label for="email">Correo electrónico</label>
-                        <input type="email" name="email" id="email" placeholder="ingresa su email">
+                        <input type="email" name="email" id="email" value="<%= userEditar.email%>">
                     </div>
                     <div class="control">
                         <label for="password">Contraseña</label>
-                        <input type="password" name="password" id="password" placeholder="ingresa su contraseña">
+                        <input type="password" name="password" id="password" value="<%= userEditar.password%>">
                     </div>
                     <div class="control">
                         <label for="repetir_password">Repite La contraseña</label>
-                        <input type="password" name="repetir_password" id="repetir_password" placeholder="Repita su contraseña">
+                        <input type="password" name="repetir_password" id="repetir_password" value="<%= userEditar.password%>">
                     </div>
                     <div class="control">
                         <label for="cellphone">Numero telefonico</label>
-                        <input type="tel" name="cellphone" id="cellphone" placeholder="ingresa aqui numero telefonico">
+                        <input type="tel" name="cellphone" id="cellphone" value="<%= userEditar.cellphone%>">
                     </div>
                     <div class="control">
                         <label for="direccion">Direccion de la vivienda</label>
-                        <input type="text" name="direccion" id="direccion" placeholder="ingresa tu direccion">
+                        <input type="text" name="direccion" id="direccion" value="<%= userEditar.direccion%>">
                     </div>
                     <div>
-                        <input type="file" id="imagen" name="imagen" class="imagen" multiple>
+                        <input type="file" id="imagen" name="imagen" class="imagen" multiple value="<%= userEditar.imagen%>">
                         <button type="button" id="boton_add" class="boton_add">
                     </div>
                     <div class="TerminosYcondiciones">
