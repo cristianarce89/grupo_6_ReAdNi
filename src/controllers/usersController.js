@@ -1,20 +1,20 @@
 const path = require('path');
 const fs = require('fs');
-const {validationResult} = require('express-validator')
+const { validationResult } = require('express-validator')
 
-const usersController = {
+module.exports = {
     users: (req, res) => {
         let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
-        res.render(path.resolve(__dirname, '../views/usuarios/users'), {users});
+        res.render(path.resolve(__dirname, '../views/usuarios/users'), { users });
     },
     login: (req, res) => {
         res.render(path.resolve(__dirname, '../views/usuarios/login'));
     },
-    register: (req,res) => {
+    register: (req, res) => {
         let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
-        res.render(path.resolve(__dirname, '../views/usuarios/register'), {users});
-    },  
-    save: (req,res) => {
+        res.render(path.resolve(__dirname, '../views/usuarios/register'), { users });
+    },
+    save: (req, res) => {
         let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
         let ultimoUsers = users.pop();
         users.push(ultimoUsers);
@@ -28,49 +28,62 @@ const usersController = {
             imagen: req.file.filename
         }
         users.push(nuevoUsers);
-        let nuevoUsersGuardar = JSON.stringify(users,null,2) //aca se guarda esa informacion de una manera organizada con el null y 2
+        let nuevoUsersGuardar = JSON.stringify(users, null, 2) //aca se guarda esa informacion de una manera organizada con el null y 2
         fs.writeFileSync(path.resolve(__dirname, '../database/users.json'), nuevoUsersGuardar); //writeFileSync me permite guardar el archvio
         res.redirect('/users');
     },
-    ver: (req,res) => {
-        let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json'))); 
+    ver: (req, res) => {
+        let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
         let miUsers;
-        users.forEach(user =>{
-            if(user.id == req.params.id){
+        users.forEach(user => {
+            if (user.id == req.params.id) {
                 miUsers = user;
             }
         });
-        res.render(path.resolve(__dirname, '../views/usuarios/ver'), {miUsers})
+        res.render(path.resolve(__dirname, '../views/usuarios/ver'), { miUsers })
     },
-    edit: (req,res) => {
+    edit: (req, res) => {
         let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
         const usersId = req.params.id;
         let userEditar = users.find(user => user.id == usersId);
-        res.render (path.resolve(__dirname, '../views/usuarios/registerEdit'), {userEditar});
+        res.render(path.resolve(__dirname, '../views/usuarios/registerEdit'), { userEditar });
     },
-    update: (req,res) => {
+    update: (req, res) => {
         let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
         req.body.id = req.params.id;
         req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
         //si la info es igual haga lo del if
         let usersUpdate = users.map(user => {
-            if(user.id == req.body.id){
+            if (user.id == req.body.id) {
                 return user = req.body;
             }
             return user;
         })
-        let userActualizar = JSON.stringify(usersUpdate,null,2);
+        let userActualizar = JSON.stringify(usersUpdate, null, 2);
         fs.writeFileSync(path.resolve(__dirname, '../database/users.json'), userActualizar);
         res.redirect('/users');
     },
-    delete: (req,res) =>{
+    delete: (req, res) => {
         let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
         const userDelete = req.params.id;
         const userFinal = users.filter(user => user.id != userDelete);
-        let usersGuardar = JSON.stringify(userFinal,null,2)
+        let usersGuardar = JSON.stringify(userFinal, null, 2)
         fs.writeFileSync(path.resolve(__dirname, '../database/users.json'), usersGuardar); //writeFileSync me permite guardar el archvio
         res.redirect('/users');
+    },
+    loginUser: (req, res) => {
+        let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+        let userEmail = req.body.email;
+        let password = req.body.password;
+        const findEmail = users.filter(user => user.email == userEmail);
+        if (userToLogin != undefined) {
+            if (bcrypt.compareSync(password, userToLogin[0].password)) {
+                res.redirect('/users');
+            }
+        }
     }
+}
+
 
     // PARTE DE EXPRESS VALIDATOR NO FUNCIONAL
     // store: (req, res) => {
@@ -85,6 +98,3 @@ const usersController = {
     //     req.session.direccion = req.body.direccion;
     //     res.redirect('/');
     // }
-}
-
-module.exports = usersController;

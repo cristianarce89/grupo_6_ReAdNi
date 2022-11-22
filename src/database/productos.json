@@ -12,20 +12,5 @@
     "talla": "40",
     "marca": "nike",
     "imagen": "zapatilla.jpg"
-  },
-  {
-    "nombre": "otra prueba",
-    "descripcion": "",
-    "precioAnt": "320000",
-    "precio": "250000",
-    "descuento": "5",
-    "ranking": "4",
-    "color": "azul",
-    "categoria": "Hombre",
-    "talla": "40",
-    "marca": "Reebok",
-    "oldImagen": "TenisReeadni-1667943400208.png",
-    "id": "2",
-    "imagen": "TenisReeadni-1667943400208.png"
   }
 ]

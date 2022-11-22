@@ -4,7 +4,7 @@ const path = require('path');
 const multer = require('multer');
 const {body,check} = require('express-validator');
 
-const usersController = require('../controllers/usersController');;
+const usersController = require('../controllers/usersController');
 
 // indicamos en este apartado para guardar archivos con multer el nombre y donde guardarlo
 const storage = multer.diskStorage({
@@ -32,7 +32,7 @@ const upload = multer({storage})
 //     }),
 //     body('direccion').notEmpty().withMessage('Exribe tu direccion'),
 // ], usersController.store);
- 
+
 router.get('/users', usersController.users);
 router.get('/login', usersController.login);
 router.get('/register', usersController.register);
