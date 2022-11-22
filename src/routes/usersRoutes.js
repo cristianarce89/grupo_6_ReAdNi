@@ -35,12 +35,14 @@ const upload = multer({storage})
 
 router.get('/users', usersController.users);
 router.get('/login', usersController.login);
+router.post('/login', usersController.loginUser);
 router.get('/register', usersController.register);
 router.post('/register',upload.single('imagen'), usersController.save);
 router.get('/users/ver/:id', usersController.ver);
 router.get('/users/userEdit/:id', usersController.edit);
 router.post('/users/userEdit/:id', upload.single('imagen'),usersController.update);
 router.get('/users/userDelete/:id', usersController.delete);
+
 
 //---------------------------------------------------------------
 

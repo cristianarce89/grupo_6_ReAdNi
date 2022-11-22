@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator');
+const bcrypt = require("bcrypt");
 
 module.exports = {
     users: (req, res) => {
@@ -22,7 +23,7 @@ module.exports = {
             id: parseInt(ultimoUsers.id + 1),
             nombre: req.body.nombre,
             email: req.body.email,
-            password: req.body.password,
+            password:  bcrypt.hashSync(req.body.password, 10),
             cellphone: req.body.cellphone,
             direccion: req.body.direccion,
             imagen: req.file.filename
@@ -71,14 +72,22 @@ module.exports = {
         fs.writeFileSync(path.resolve(__dirname, '../database/users.json'), usersGuardar); //writeFileSync me permite guardar el archvio
         res.redirect('/users');
     },
+
     loginUser: (req, res) => {
+        console.log("esroy en login")
         let users = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+
         let userEmail = req.body.email;
-        let password = req.body.password;
-        const findEmail = users.filter(user => user.email == userEmail);
-        if (userToLogin != undefined) {
-            if (bcrypt.compareSync(password, userToLogin[0].password)) {
-                res.redirect('/users');
+
+        let userPassword = req.body.password;
+
+        const userToLogin = users.filter(user => user.email == userEmail);
+        console.log(userToLogin);
+        if (userToLogin) {
+            if (bcrypt.compareSync(userPassword, userToLogin.password)) {
+                console.log(userToLogin);
+            }else{
+                console.log("no estoy logueado")
             }
         }
     }
