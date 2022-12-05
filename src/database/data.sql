@@ -215,13 +215,13 @@ CREATE TABLE `user` (
   `idUser` int NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `cellphone` int NOT NULL,
+  `cellphone` varchar(10) NOT NULL,
   `address` varchar(50) NOT NULL,
   `id_cities` int NOT NULL,
   PRIMARY KEY (`idUser`),
   KEY `id_cities` (`id_cities`),
   CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_cities`) REFERENCES `city` (`idCity`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -230,6 +230,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'andres cortes','andrescortes@gmail.com','3101120192','calle 1 carrera 2 23-23',1),(2,'jhon florez','jhon florez@gmail.com','3111823456','calle 10 carrera 12 3-03',2),(3,'diego rojas','diegorojas@gmail.com','3129834728','calle 12 carrera 23 5-27',3),(4,'maria sarmiento','mariasarmiento@gmail.com','3139283710','calle 4 carrera 23 9-45',4),(5,'johany serna','johanyserna@gmail.com','3210129814','calle 52 carrera 5 90-87',5),(6,'sandra mejia','sandramejia@gmail.com','3308739820','calle 8 carrera 74 62-06',6),(7,'carlos rios','carlosrios@gmail.com','3012010028','calle 43 carrera 98 1-46',7),(8,'sara perea','saraperea@gmail.com','3159827682','calle 2 carrera 6 78-78',8),(9,'aide ramirez','aideramirez@gmail.com','3165476739','calle 65 carrera 1 63-97',9),(10,'david bustamante','davidbustamante@gmail.com','3108901273','calle 35 carrera 95 4-22',10);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -270,4 +271,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-04 19:03:50
+-- Dump completed on 2022-12-04 19:46:36
