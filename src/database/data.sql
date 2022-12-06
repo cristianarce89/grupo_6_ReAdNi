@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
--- Host: localhost    Database: data
+-- Host: 127.0.0.1    Database: data.sql
 -- ------------------------------------------------------
 -- Server version	8.0.31
 
@@ -33,16 +33,6 @@ CREATE TABLE `category` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `category`
---
-
-LOCK TABLES `category` WRITE;
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (14,'hombre',1),(15,'hombre',2),(16,'hombre',3),(17,'mujer',1),(18,'mujer',2),(19,'mujer',3),(20,'niño',1),(21,'niño',2),(22,'niño',3);
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `city`
 --
 
@@ -57,16 +47,6 @@ CREATE TABLE `city` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `city`
---
-
-LOCK TABLES `city` WRITE;
-/*!40000 ALTER TABLE `city` DISABLE KEYS */;
-INSERT INTO `city` VALUES (1,'bogota'),(2,'medellin'),(3,'bucaramanga'),(4,'cali'),(5,'santamarta'),(6,'ibague'),(7,'villavicencio'),(8,'manizales'),(9,'pasto'),(10,'popayan');
-/*!40000 ALTER TABLE `city` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `color`
 --
 
@@ -79,16 +59,6 @@ CREATE TABLE `color` (
   PRIMARY KEY (`idColor`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `color`
---
-
-LOCK TABLES `color` WRITE;
-/*!40000 ALTER TABLE `color` DISABLE KEYS */;
-INSERT INTO `color` VALUES (1,'azul'),(2,'amarillo'),(3,'verde'),(4,'fucsia'),(5,'blanco'),(6,'negro'),(7,'rojo'),(8,'gris'),(9,'rosado'),(10,'morado');
-/*!40000 ALTER TABLE `color` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `market`
@@ -106,16 +76,6 @@ CREATE TABLE `market` (
   CONSTRAINT `market_ibfk_1` FOREIGN KEY (`id_colors`) REFERENCES `color` (`idColor`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `market`
---
-
-LOCK TABLES `market` WRITE;
-/*!40000 ALTER TABLE `market` DISABLE KEYS */;
-INSERT INTO `market` VALUES (1,'reebok',1),(2,'adidas',2),(3,'nike',3);
-/*!40000 ALTER TABLE `market` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `product`
@@ -140,17 +100,8 @@ CREATE TABLE `product` (
   CONSTRAINT `product_ibfk_1` FOREIGN KEY (`id_markets`) REFERENCES `market` (`idMarket`),
   CONSTRAINT `product_ibfk_2` FOREIGN KEY (`id_categories`) REFERENCES `category` (`idCategory`),
   CONSTRAINT `product_ibfk_3` FOREIGN KEY (`id_sizes`) REFERENCES `size` (`idSize`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `product`
---
-
-LOCK TABLES `product` WRITE;
-/*!40000 ALTER TABLE `product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `product_size`
@@ -168,17 +119,8 @@ CREATE TABLE `product_size` (
   KEY `id_sizes` (`id_sizes`),
   CONSTRAINT `product_size_ibfk_1` FOREIGN KEY (`id_products`) REFERENCES `product` (`idProduct`),
   CONSTRAINT `product_size_ibfk_2` FOREIGN KEY (`id_sizes`) REFERENCES `size` (`idSize`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `product_size`
---
-
-LOCK TABLES `product_size` WRITE;
-/*!40000 ALTER TABLE `product_size` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product_size` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `size`
@@ -193,16 +135,6 @@ CREATE TABLE `size` (
   PRIMARY KEY (`idSize`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `size`
---
-
-LOCK TABLES `size` WRITE;
-/*!40000 ALTER TABLE `size` DISABLE KEYS */;
-INSERT INTO `size` VALUES (1,25),(2,26),(3,27),(4,28),(5,29),(6,30),(7,31),(8,32),(9,33),(10,34),(11,35),(12,36),(13,37),(14,38),(15,39),(16,40),(17,41),(18,42),(19,43),(20,44);
-/*!40000 ALTER TABLE `size` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `user`
@@ -225,16 +157,6 @@ CREATE TABLE `user` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
---
-
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'andres cortes','andrescortes@gmail.com','3101120192','calle 1 carrera 2 23-23',1),(2,'jhon florez','jhon florez@gmail.com','3111823456','calle 10 carrera 12 3-03',2),(3,'diego rojas','diegorojas@gmail.com','3129834728','calle 12 carrera 23 5-27',3),(4,'maria sarmiento','mariasarmiento@gmail.com','3139283710','calle 4 carrera 23 9-45',4),(5,'johany serna','johanyserna@gmail.com','3210129814','calle 52 carrera 5 90-87',5),(6,'sandra mejia','sandramejia@gmail.com','3308739820','calle 8 carrera 74 62-06',6),(7,'carlos rios','carlosrios@gmail.com','3012010028','calle 43 carrera 98 1-46',7),(8,'sara perea','saraperea@gmail.com','3159827682','calle 2 carrera 6 78-78',8),(9,'aide ramirez','aideramirez@gmail.com','3165476739','calle 65 carrera 1 63-97',9),(10,'david bustamante','davidbustamante@gmail.com','3108901273','calle 35 carrera 95 4-22',10);
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `user_product`
 --
 
@@ -250,17 +172,8 @@ CREATE TABLE `user_product` (
   KEY `id_users` (`id_users`),
   CONSTRAINT `user_product_ibfk_1` FOREIGN KEY (`id_products`) REFERENCES `product` (`idProduct`),
   CONSTRAINT `user_product_ibfk_2` FOREIGN KEY (`id_users`) REFERENCES `user` (`idUser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_product`
---
-
-LOCK TABLES `user_product` WRITE;
-/*!40000 ALTER TABLE `user_product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_product` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -271,4 +184,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-04 19:46:36
+-- Dump completed on 2022-12-05 20:48:38
