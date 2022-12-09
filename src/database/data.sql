@@ -33,6 +33,16 @@ CREATE TABLE `category` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `category`
+--
+
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (14,'hombre',1),(15,'hombre',2),(16,'hombre',3),(17,'mujer',1),(18,'mujer',2),(19,'mujer',3),(20,'niño',1),(21,'niño',2),(22,'niño',3);
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `city`
 --
 
@@ -47,6 +57,16 @@ CREATE TABLE `city` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `city`
+--
+
+LOCK TABLES `city` WRITE;
+/*!40000 ALTER TABLE `city` DISABLE KEYS */;
+INSERT INTO `city` VALUES (1,'bogota'),(2,'medellin'),(3,'bucaramanga'),(4,'cali'),(5,'santamarta'),(6,'ibague'),(7,'villavicencio'),(8,'manizales'),(9,'pasto'),(10,'popayan');
+/*!40000 ALTER TABLE `city` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `color`
 --
 
@@ -59,6 +79,16 @@ CREATE TABLE `color` (
   PRIMARY KEY (`idColor`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `color`
+--
+
+LOCK TABLES `color` WRITE;
+/*!40000 ALTER TABLE `color` DISABLE KEYS */;
+INSERT INTO `color` VALUES (1,'azul'),(2,'amarillo'),(3,'verde'),(4,'fucsia'),(5,'blanco'),(6,'negro'),(7,'rojo'),(8,'gris'),(9,'rosado'),(10,'morado');
+/*!40000 ALTER TABLE `color` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `market`
@@ -76,6 +106,16 @@ CREATE TABLE `market` (
   CONSTRAINT `market_ibfk_1` FOREIGN KEY (`id_colors`) REFERENCES `color` (`idColor`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `market`
+--
+
+LOCK TABLES `market` WRITE;
+/*!40000 ALTER TABLE `market` DISABLE KEYS */;
+INSERT INTO `market` VALUES (1,'reebok',1),(2,'adidas',2),(3,'nike',3);
+/*!40000 ALTER TABLE `market` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `product`
@@ -104,6 +144,16 @@ CREATE TABLE `product` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (31,'Tennis reebok maravilla version 1',5,150000,0,1,14,15),(32,'Tennis adidas maravilla version 2',2,70000,2,2,15,13),(33,'Tennis nike maravilla version 3',4,90000,10,3,16,4),(34,'Tennis reebok universo version 1',3,180000,10,1,17,16),(35,'Tennis adidas universo version 2',5,190000,8,2,18,17),(36,'Tennis nike universo version 3',5,200000,7,3,19,5),(37,'Tennis reebok galaxy version 1',5,300000,2,1,20,18),(38,'Tennis adidas galaxy version 2',5,250000,0,2,21,14),(39,'Tennis nike galaxy version 3',4,130000,10,3,22,2),(40,'Tennis nike jordan version xx',5,400000,5,3,14,20);
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `product_size`
 --
 
@@ -123,6 +173,16 @@ CREATE TABLE `product_size` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `product_size`
+--
+
+LOCK TABLES `product_size` WRITE;
+/*!40000 ALTER TABLE `product_size` DISABLE KEYS */;
+INSERT INTO `product_size` VALUES (1,31,1),(2,32,4),(3,33,8),(4,34,7),(5,35,9),(6,36,10),(7,37,20),(8,38,11),(9,39,12),(10,40,19);
+/*!40000 ALTER TABLE `product_size` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `size`
 --
 
@@ -135,6 +195,16 @@ CREATE TABLE `size` (
   PRIMARY KEY (`idSize`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `size`
+--
+
+LOCK TABLES `size` WRITE;
+/*!40000 ALTER TABLE `size` DISABLE KEYS */;
+INSERT INTO `size` VALUES (1,25),(2,26),(3,27),(4,28),(5,29),(6,30),(7,31),(8,32),(9,33),(10,34),(11,35),(12,36),(13,37),(14,38),(15,39),(16,40),(17,41),(18,42),(19,43),(20,44);
+/*!40000 ALTER TABLE `size` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `user`
@@ -157,6 +227,16 @@ CREATE TABLE `user` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'andres cortes','andrescortes@gmail.com','3101120192','calle 1 carrera 2 23-23',1),(2,'jhon florez','jhon florez@gmail.com','3111823456','calle 10 carrera 12 3-03',2),(3,'diego rojas','diegorojas@gmail.com','3129834728','calle 12 carrera 23 5-27',3),(4,'maria sarmiento','mariasarmiento@gmail.com','3139283710','calle 4 carrera 23 9-45',4),(5,'johany serna','johanyserna@gmail.com','3210129814','calle 52 carrera 5 90-87',5),(6,'sandra mejia','sandramejia@gmail.com','3308739820','calle 8 carrera 74 62-06',6),(7,'carlos rios','carlosrios@gmail.com','3012010028','calle 43 carrera 98 1-46',7),(8,'sara perea','saraperea@gmail.com','3159827682','calle 2 carrera 6 78-78',8),(9,'aide ramirez','aideramirez@gmail.com','3165476739','calle 65 carrera 1 63-97',9),(10,'david bustamante','davidbustamante@gmail.com','3108901273','calle 35 carrera 95 4-22',10);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user_product`
 --
 
@@ -174,6 +254,16 @@ CREATE TABLE `user_product` (
   CONSTRAINT `user_product_ibfk_2` FOREIGN KEY (`id_users`) REFERENCES `user` (`idUser`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_product`
+--
+
+LOCK TABLES `user_product` WRITE;
+/*!40000 ALTER TABLE `user_product` DISABLE KEYS */;
+INSERT INTO `user_product` VALUES (1,31,3),(2,32,4),(3,33,5),(4,34,6),(5,35,7),(6,36,8),(7,37,9),(8,38,10),(9,39,1),(10,40,2);
+/*!40000 ALTER TABLE `user_product` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -184,4 +274,4 @@ CREATE TABLE `user_product` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-05 20:48:38
+-- Dump completed on 2022-12-08 17:58:26
