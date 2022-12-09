@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         id_products: {
-            type: dataTypes.STRING 
+            type: dataTypes.INTEGER
         },
 
         id_sizes: {
