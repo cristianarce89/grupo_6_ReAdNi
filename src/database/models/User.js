@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         email: {
-            type: dataTypes.INTEGER
+            type: dataTypes.STRING
         },
 
         cellphone: {
@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         address: {
-            type: dataTypes.INTEGER
+            type: dataTypes.STRING
         },
  
         id_cities: {
