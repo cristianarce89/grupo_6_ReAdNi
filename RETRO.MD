@@ -188,7 +188,50 @@ abstraemos. Es decir, que aislamos ese comportamiento en un bloque de código re
 Los middlewares nos permiten justamente eso. Un middleware de aplicación se ejecutará en
 cada pedido del cliente, mientras que un middleware de ruta se ejecutará cada vez que se pida
 esa ruta particular.
-Con estas dos herramientas se pueden hacer cosas muy poderosas. De hecho, cada uno de los
-paquetes que han instalado (Express, EJS, method-override, Multer, etc.) están construidos
-como middlewares. Ahora ya pueden construir los suyos. 😎✌✨
 
+
+-------------------------------------------------------------------------------
+Retrospectiva del sprint 6.
+
+Toda buena base de datos empieza en la mesa de dibujo. Tendrán que armar el
+Diagrama de Entidades y Relaciones (DER). Piensen en un buen diseño, armen un
+diagrama legible, con relaciones correctas y las claves foráneas para representarlas.
+Recuerden que luego deberán implementar Sequelize y que, por lo general, los ORMs
+como este trabajan mejor con los nombres de tablas en inglés.
+
+
+comenzar hacer
+Realizar la planeacion del sprin y trabajajando  en equipo
+Realizar,actuliazar, implementar la retrospectiva y el tablero.
+Diagrama de base de datos
+Script de estructura
+Creación de carpeta Sequelize y archivos de modelos
+CRUD
+
+hacer mas
+buscar  las consultas necesarias para trabajar en las tablas, mejorando los commit en el github, mojorando las metodos del mysql
+
+
+continuar haciendo
+seguir trabajndo juntos, escuchar los aportes, concejos,apoyarnos mas de lo que ya hacemos.
+
+hacer menos
+no tener pena por que unos saben mas que otros y seguir intentandolo, todos aprenden a su ritmo.
+
+dejar de hacer
+el silencio, hay que hablar mas, preguntar mas. tenemos que creernos esto y si podemos , dejar lo negativo
+
+
+analisis de trabajo en equipo.
+
+somos un equipo que desea aprender cada dìa màs, que le tiene miedo a los retos , pero los asume y lo hacemos, hay compañeros mas destacados que otros, pero somos y nos vemos iguales, compartimos y buscamos que todo salga bien.
+
+Las bases de datos son una herramienta que permite que el almacenamiento de los
+datos crezca de forma escalable y veloz. Puede ser un trabajo arduo (sobretodo si ya teníamos
+cosas hechas en JSON... 😅), pero el resultado es increíble. No solo es increíble porque nuestra
+aplicación está lista para crecer radicalmente, sino porque ¡completamos un back-end
+completo!
+Pensar, diseñar, implementar una base de datos no es sencillo, pero un buen diseño inicial va a
+asegurar nuestro éxito en el tiempo. Además, implementarlo en Sequelize nos permite corrernos
+un poco de SQL y aprovechar todas las prestaciones de un buen ORM.
+Si llegamos hasta acá, felicitaciones, somos cracks. 😎✌️✨
