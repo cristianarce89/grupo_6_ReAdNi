@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = 'user'; 
+    let alias = 'User'; 
     let cols = {
         idUser: {
             type: dataTypes.INTEGER,
@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
         address: {
             type: dataTypes.STRING
         },
- 
+
         id_cities: {
             type: dataTypes.INTEGER
         }
@@ -32,10 +32,10 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tableName: 'user',
+        tableName: 'User',
         timestamps: false
     }
 
-    const user = sequelize.define(alias,cols,config);
-    return user;
+    const User = sequelize.define(alias,cols,config);
+    return User;
 }

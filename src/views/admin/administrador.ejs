@@ -50,24 +50,24 @@
                 </tr>
             </thead>
             <tbody>
-                <% productos.forEach(productos=> { %>
+                <% productos.forEach(products=> { %>
                     <tr>
                         <td>
-                            <%= productos.id%>
+                            <%= product.idProduct%>
                         </td>
                         <td>
-                            <%= productos.nombre%>
+                            <%= products.name%>
                         </td>
                         <td>
-                            <%= productos.categoria%>
+                            <%= products.id_categories%>
                         </td>
-                        <td><a href="/admin/productDetail/<%= productos.id%> ">
+                        <td><a href="/admin/productDetail/<%= products.idProduct%> ">
                                 <i class="fa-solid fa-eye"></i>
                             </a></td>
-                        <td><a href="/admin/productEdit/<%= productos.id%> ">
+                        <td><a href="/admin/productEdit/<%= products.idProduct%> ">
                                 <i class="fa-solid fa-pen"></i>
                             </a></td>
-                        <td><a href="/admin/productDelete/<%= productos.id%>">
+                        <td><a href="/admin/productDelete/<%= products.idProduct%>">
                                 <i class="fa-solid fa-trash"></i>
                             </a></td>
                     </tr>
