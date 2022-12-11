@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = 'products'; 
+    let alias = 'Product'; 
     let cols = {
         idProduct: {
             type: dataTypes.INTEGER,
@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
         discounts: {
             type: dataTypes.INTEGER
         },
- 
+
         id_markets: {
             type: dataTypes.INTEGER
         },
@@ -38,10 +38,10 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tableName: 'products',
+        tableName: 'Product',
         timestamps: false
     }
 
-    const products = sequelize.define(alias,cols,config);
-    return products;
+    const Product = sequelize.define(alias,cols,config);
+    return Product;
 }

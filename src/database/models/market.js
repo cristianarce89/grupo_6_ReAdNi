@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = 'market'; 
+    let alias = 'Market'; 
     let cols = {
         idMarket: {
             type: dataTypes.INTEGER,
@@ -15,14 +15,14 @@ module.exports = (sequelize, dataTypes) => {
         id_colors: {
             type: dataTypes.INTEGER
         }
-  
+
     }
 
     let config = {
-        tableName: 'market',
+        tableName: 'Market',
         timestamps: false
     }
 
-    const market = sequelize.define(alias,cols,config);
-    return market;
+    const Market = sequelize.define(alias,cols,config);
+    return Market;
 }
