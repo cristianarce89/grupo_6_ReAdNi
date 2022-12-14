@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
 
 
-    let alias = 'city'; 
+    let alias = 'City'; 
     let cols = {
         idCity: {
             type: dataTypes.INTEGER,
@@ -16,12 +16,10 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tableName: 'city',
+        tableName: 'City',
         timestamps: false
     }
 
-    const city = sequelize.define(alias,cols,config);
-    return city;
-    
+    const City = sequelize.define(alias,cols,config);
+    return City;
 }
-//se suben de nuevo las tablas
