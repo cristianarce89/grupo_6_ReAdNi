@@ -6,6 +6,7 @@ const logger = require('morgan');
 const methodOverride = require ('method-override');
 const app = express();
 const session = require('express-session');
+const db = require('./config/db.js')
 // const userLogsMiddleware = require('./middlewares/userLogs');
 
 // Indicar las vistas
@@ -20,6 +21,15 @@ app.use(cookieParser());
 app.use(session({ secret: 'Proyecto intregrador Readni secreto', resave: false, saveUninitialized: true }));
 // app.use(userLogsMiddleware);
 
+//Conexion a la base de datos
+try {
+  db.authenticate();
+  db.sync();
+  console.log('LA CONEXION A LA BASE DE DATOS FUE EXITOSA');
+} catch (error) {
+  console.log(error);
+}
+
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -33,12 +43,13 @@ const indexRoutes = require('./src/routes/indexRoutes');
 const productsRoutes = require('./src/routes/productsRoutes');
 const usersRoutes = require('./src/routes/usersRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
+const { log } = require('console');
 
 //USAR LAS RUTAS
 app.use('/', indexRoutes);
 app.use(productsRoutes);
 app.use(usersRoutes);
-app.use(adminRoutes);
+app.use('/', adminRoutes);
 
 
 // catch 404 and forward to error handler

@@ -1,47 +1,57 @@
-module.exports = (sequelize, dataTypes) => {
+const { DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt.js');
+const db = require('../config/db.js');
 
-    let alias = 'Product'; 
-    let cols = {
-        idProduct: {
-            type: dataTypes.INTEGER,
+
+const Product = db.define('products', {
+    idProduct: {
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
 
         name: {
-            type: dataTypes.STRING 
+            allowNull: false,
+            type: DataTypes.STRING 
         },
 
         ranking: {
-            type: dataTypes.INTEGER
+            allowNull: false,
+            type: DataTypes.INTEGER
         },
 
         price: {
-            type: dataTypes.INTEGER
+            allowNull: false,
+            type: DataTypes.INTEGER
         },
 
         discounts: {
-            type: dataTypes.INTEGER
+            allowNull: false,
+            type: DataTypes.INTEGER
         },
 
         id_markets: {
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER
         },
 
         id_categories: {
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER
         },
 
         id_sizes: {
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER
+        },
+
+        
+        //token para encryptar contraseñas
+        token: DataTypes, 
+    }, {
+        hooks: {
+            beforeCreate: async function(Product){
+                const salt = await bcrypt.genSalt(10)
+                Product.password = await bcrypt.hash( Product.password, salt)
+            }
         }
-    }
+    })
 
-    let config = {
-        tableName: 'Product',
-        timestamps: false
-    }
-
-    const Product = sequelize.define(alias,cols,config);
-    return Product;
-}
+    module.exports = Product;

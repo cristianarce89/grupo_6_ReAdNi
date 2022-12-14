@@ -1,0 +1,21 @@
+const { Sequelize } = require('sequelize');
+const dotenv = require('dotenv');
+dotenv.config({path: '.env'});
+
+//conectando la base de datos con zequelize con variables de entorno
+const db = new Sequelize(process.env.BD_NOMBRE, process.env.BD_USER, process.env.BD_PASSWORD, {
+    host: process.env.BD_HOST,
+    port: process.env.BD_PORT,
+    dialect: 'mysql',
+    define: {
+        timestamps: true
+    },
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000,
+    },
+})
+
+module.exports = db;

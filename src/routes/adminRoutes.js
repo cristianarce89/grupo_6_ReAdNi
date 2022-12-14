@@ -3,7 +3,12 @@ const router = express.Router();
 const path = require('path');
 const multer = require('multer')
 
-const adminController = require('../controllers/adminController');
+
+// const adminController = require('../controllers/adminControllerJSON');
+const productCreate = require('../controllers/adminController.js');
+
+router.post('/productCreate', productCreate);
+
 
 // indicamos en este apartado para guardar archivos con multer el nombre y donde guardarlo
 const storage = multer.diskStorage({
@@ -17,8 +22,8 @@ const storage = multer.diskStorage({
 const upload = multer({storage})
 //------------------------------------------------------------------
 
-router.get('/admin', adminController.admin);
-router.get('/productCreate', adminController.productCreate);
+// router.get('/admin', adminController.admin);
+// router.get('/productCreate', adminController.productCreate);
 // router.post('/productCreate',upload.single('imagen'), adminController.save);
 // router.get('/admin/productDetail/:id', adminController.ver);
 // router.get('/admin/productEdit/:id', adminController.edit);
