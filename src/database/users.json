@@ -19,12 +19,22 @@
     "imagen": "UsuariosReeadni-1668445503212.png"
   },
   {
-    "id": 3,
     "nombre": "juliana",
     "email": "juliana@juliana",
     "password": "123456",
-    "cellphone": "3111564877",
-    "direccion": "cra9 n 500-21",
-    "imagen": "UsuariosReeadni-1668352685314.png"
+    "repetir_password": "123456",
+    "cellphone": "3002102662",
+    "ciudad": "ENVIGADO",
+    "direccion": "Cr 42  23 A sur - 126",
+    "id": "3"
+  },
+  {
+    "id": 31,
+    "nombre": "juliana",
+    "email": "julianaPineroz@gmail.com",
+    "password": "$2b$10$IC5yUXIcCU5Ffzx9skNPuOuY0Hm8r1IrNdKe2mAXYZDh1AmEY3pyW",
+    "cellphone": "2148013",
+    "direccion": "call 79c",
+    "imagen": "UsuariosReeadni-1671387891828.jpg"
   }
 ]
