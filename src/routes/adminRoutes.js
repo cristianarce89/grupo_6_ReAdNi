@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
 const multer = require('multer')
+const path = require('path');
 
 const adminController = require('../controllers/adminController');
 
@@ -17,12 +17,15 @@ const storage = multer.diskStorage({
 const upload = multer({storage})
 //------------------------------------------------------------------
 
-router.get('/admin', adminController.admin);
-router.get('/productCreate', adminController.productCreate);
-router.post('/productCreate',upload.single('imagen'), adminController.save);
-router.get('/admin/productDetail/:id', adminController.ver);
-router.get('/admin/productEdit/:id', adminController.edit);
-router.post('/admin/productEdit/:id', upload.single('imagen'),adminController.update);
-router.get('/admin/productDelete/:id', adminController.delete);
+router.get('/administrar', adminController.list)
+router.get('/productCreate', adminController.new);
+router.get('/administrar/productDetail/:id', adminController.detail);
+router.get('/administrar/productEdit/:id', adminController.edit);
+
+// router.post('/productCreate',upload.single('imagen'), adminController.save);
+
+// router.get('/admin/productEdit/:id', adminController.edit);
+// router.post('/admin/productEdit/:id', upload.single('imagen'),adminController.update);
+// router.get('/admin/productDelete/:id', adminController.delete);
 
 module.exports = router;
