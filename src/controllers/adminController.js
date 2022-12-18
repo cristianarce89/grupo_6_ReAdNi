@@ -1,20 +1,37 @@
 const path = require('path');
-const fs = require('fs');
-const db = require('../database/models');
+const db = require('../database/models')
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
 
-
-//Aqui tienen otra forma de llamar a cada uno de los modelos
-const Product = db.Product;
-
-const adminController = {
-    'admin': (req,res) => {
+module.exports = {
+    list: (req, res) => {
         db.Product.findAll()
-            .then(products => {
-                res.render('administrador.ejs', {products})
+            .then(product => {
+                res.render('admin/administrador.ejs', {product:product})              
             })
+    },
+    viewProductCreate: (req, res) => {
+        res.render('productos/productCreate.ejs');
+    },
+    detail: (req,res) => {
+        db.Product.findByPk(req.params.id)
+            .then(product => {
+                res.render('productos/productDetail.ejs'), {product};
+            })
+    },
+
+    //Aqui dispongo las rutas para trabajar con el CRUD
+
+    add: function (req, res) {
+        let promGenres = Genres.findAll();
+        let promActors = Actors.findAll();
+        
+        Promise
+        .all([promGenres, promActors])
+        .then(([allGenres, allActors]) => {
+            return res.render(path.resolve(__dirname, '..', 'views',  'moviesAdd'), {allGenres,allActors})})
+        .catch(error => res.send(error))
     }
+}
 
     // admin: (req,res) => {
     //     //llamo el objeto json y lo paso de un string a un objeto literal
@@ -26,8 +43,6 @@ const adminController = {
     //     let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/productos.json'))); 
     //     res.render(path.resolve(__dirname, '../views/productos/productCreate'), {productos});
     // },
-
-
     // save: (req,res) => {
     //     let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/productos.json')));
     //     let ultimoProducto = productos.pop();
@@ -94,6 +109,6 @@ const adminController = {
     //     fs.writeFileSync(path.resolve(__dirname, '../database/productos.json'), productosGuardar); //writeFileSync me permite guardar el archvio
     //     res.redirect('/admin');
     // }
-}
+// }
 
-module.exports = adminController;
+// module.exports = adminController;
