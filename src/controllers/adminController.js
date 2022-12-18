@@ -22,32 +22,46 @@ const adminController = {
                 res.render('productos/productDetail', {product})
             })
     },
+
+
+//Aqui dispongo las rutas para trabajar con el CRUD
+
+    create: (req,res) => {
+        Product.create(
+            {
+                name: req.body.name,
+                description: req.body.description,
+                priceAnt: req.body.precioAnt,
+                price: req.body.price,
+                discounts: req.body.discounts,
+                rating: req.body.rating,
+                color: req.body.color,
+                id_category: req.body.id_category,
+                id_sizes: req.body.id_sizes,
+                id_markets: req.body.id_markets,
+                imagen: req.body.id.imagen
+            }
+        )
+
+        // db.Product.create ({
+        //     ...req.body
+        // })
+        .then(()=> {
+            console.log(Product)
+            return res.redirect('admin/administrador')})            
+        .catch(error => res.send(error))
+    },
+    
     edit: (req,res) => {
         Product.findByPk(req.params.id)
             .then(product => {
                 res.render('productos/productEdit', {product})
         })
             .catch(error => res.send(error));
-    },
-
-//Aqui dispongo las rutas para trabajar con el CRUD
-
-    create: (req,res) => {
-        Product.add(
-            {
-                title: req.body.title,
-                rating: req.body.rating,
-                awards: req.body.awards,
-                release_date: req.body.release_date,
-                length: req.body.length,
-                genre_id: req.body.genre_id
-            }
-        )
-        .then(()=> {
-            return res.redirect('admin/administrador')})            
-        .catch(error => res.send(error))
     }
 } 
+
+
 
     module.exports = adminController;
 
