@@ -22,31 +22,39 @@ const adminController = {
                 res.render('productos/productDetail', {product})
             })
     },
-    'edit': (req,res) => {
+    edit: (req,res) => {
         Product.findByPk(req.params.id)
             .then(product => {
                 res.render('productos/productEdit', {product})
         })
-            // .catch(error => res.send(error));
-    }
-}
+            .catch(error => res.send(error));
+    },
 
+//Aqui dispongo las rutas para trabajar con el CRUD
+
+    create: (req,res) => {
+        Product.add(
+            {
+                title: req.body.title,
+                rating: req.body.rating,
+                awards: req.body.awards,
+                release_date: req.body.release_date,
+                length: req.body.length,
+                genre_id: req.body.genre_id
+            }
+        )
+        .then(()=> {
+            return res.redirect('admin/administrador')})            
+        .catch(error => res.send(error))
+    }
+} 
 
     module.exports = adminController;
 
 
-    //Aqui dispongo las rutas para trabajar con el CRUD
 
-    // add: function (req, res) {
-    //     let promGenres = Genres.findAll();
-    //     let promActors = Actors.findAll();
-        
-    //     Promise
-    //     .all([promGenres, promActors])
-    //     .then(([allGenres, allActors]) => {
-    //         return res.render(path.resolve(__dirname, '..', 'views',  'moviesAdd'), {allGenres,allActors})})
-    //     .catch(error => res.send(error))
-    // }
+
+
 
     // admin: (req,res) => {
     //     //llamo el objeto json y lo paso de un string a un objeto literal
