@@ -2,36 +2,51 @@ const path = require('path');
 const db = require('../database/models')
 const sequelize = db.sequelize;
 
-module.exports = {
-    list: (req, res) => {
+
+const Product = db.Product;
+
+
+const adminController = {
+    'list': (req, res) => {
         db.Product.findAll()
             .then(product => {
-                res.render('admin/administrador.ejs', {product:product})              
+                res.render('admin/administrador', {product})              
             })
     },
-    viewProductCreate: (req, res) => {
-        res.render('productos/productCreate.ejs');
+    'new': (req, res) => {
+        res.render('productos/productCreate');
     },
-    detail: (req,res) => {
+    'detail': (req,res) => {
         db.Product.findByPk(req.params.id)
             .then(product => {
-                res.render('productos/productDetail.ejs'), {product};
+                res.render('productos/productDetail', {product})
             })
     },
+    'edit': (req,res) => {
+        Product.findByPk(req.params.id)
+            .then(product => {
+                res.render('productos/productEdit', {product})
+        })
+            // .catch(error => res.send(error));
+    }
+}
+
+
+    module.exports = adminController;
+
 
     //Aqui dispongo las rutas para trabajar con el CRUD
 
-    add: function (req, res) {
-        let promGenres = Genres.findAll();
-        let promActors = Actors.findAll();
+    // add: function (req, res) {
+    //     let promGenres = Genres.findAll();
+    //     let promActors = Actors.findAll();
         
-        Promise
-        .all([promGenres, promActors])
-        .then(([allGenres, allActors]) => {
-            return res.render(path.resolve(__dirname, '..', 'views',  'moviesAdd'), {allGenres,allActors})})
-        .catch(error => res.send(error))
-    }
-}
+    //     Promise
+    //     .all([promGenres, promActors])
+    //     .then(([allGenres, allActors]) => {
+    //         return res.render(path.resolve(__dirname, '..', 'views',  'moviesAdd'), {allGenres,allActors})})
+    //     .catch(error => res.send(error))
+    // }
 
     // admin: (req,res) => {
     //     //llamo el objeto json y lo paso de un string a un objeto literal
@@ -111,4 +126,3 @@ module.exports = {
     // }
 // }
 
-// module.exports = adminController;
