@@ -1,8 +1,9 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = 'Market'; 
+
+    let alias = 'City'; 
     let cols = {
-        idMarket: {
+        idCity: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -10,19 +11,15 @@ module.exports = (sequelize, dataTypes) => {
 
         name: {
             type: dataTypes.STRING 
-        },
-
-        id_colors: {
-            type: dataTypes.INTEGER
         }
 
     }
 
     let config = {
-        tableName: 'Market',
+        tableName: 'City',
         timestamps: false
     }
 
-    const Market = sequelize.define(alias,cols,config);
-    return Market;
+    const City = sequelize.define(alias,cols,config);
+    return City;
 }

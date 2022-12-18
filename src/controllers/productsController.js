@@ -1,6 +1,11 @@
 const path = require('path');
+const db = require('../database/models')
+const sequelize = db.sequelize;
 
-const productsController = {
+const Product = db.Product
+
+module.exports = {
+
     productCart: (req, res) => {
         res.render(path.resolve(__dirname, '../views/productos/productCart'));
     },
@@ -12,7 +17,6 @@ const productsController = {
     },
     products: (req, res) => {
         res.render(path.resolve(__dirname, '../views/productos/products'));
-    }
+    }    
 };
 
-module.exports = productsController;
