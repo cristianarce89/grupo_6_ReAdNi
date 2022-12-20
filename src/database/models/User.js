@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = 'User'; 
+    let alias = 'User';
     let cols = {
         idUser: {
             type: dataTypes.INTEGER,
@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         name: {
-            type: dataTypes.STRING 
+            type: dataTypes.STRING
         },
 
         email: {
@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER
         }
 
-        
+
     }
 
     let config = {
@@ -36,6 +36,14 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
 
-    const User = sequelize.define(alias,cols,config);
+    const User = sequelize.define(alias, cols, config);
+
+    User.associate = function (models) {
+        User.belongsTo(models.City, {
+            as: 'city',
+            foreigkey: 'cities_id'
+        })
+
+    }
     return User;
 }

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: data.sql
+-- Host: 127.0.0.1    Database: data
 -- ------------------------------------------------------
 -- Server version	8.0.31
 
@@ -133,6 +133,10 @@ CREATE TABLE `product` (
   `id_markets` int NOT NULL,
   `id_categories` int NOT NULL,
   `id_sizes` int NOT NULL,
+  `description` varchar(50) NOT NULL,
+  `imagen` varchar(50) DEFAULT NULL,
+  `priceAnt` int DEFAULT NULL,
+  `id_color` int NOT NULL,
   PRIMARY KEY (`idProduct`),
   KEY `id_markets` (`id_markets`),
   KEY `id_categories` (`id_categories`),
@@ -149,7 +153,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (31,'Tennis reebok maravilla version 1',5,150000,0,1,14,15),(32,'Tennis adidas maravilla version 2',2,70000,2,2,15,13),(33,'Tennis nike maravilla version 3',4,90000,10,3,16,4),(34,'Tennis reebok universo version 1',3,180000,10,1,17,16),(35,'Tennis adidas universo version 2',5,190000,8,2,18,17),(36,'Tennis nike universo version 3',5,200000,7,3,19,5),(37,'Tennis reebok galaxy version 1',5,300000,2,1,20,18),(38,'Tennis adidas galaxy version 2',5,250000,0,2,21,14),(39,'Tennis nike galaxy version 3',4,130000,10,3,22,2),(40,'Tennis nike jordan version xx',5,400000,5,3,14,20);
+INSERT INTO `product` VALUES (31,'Tennis reebok maravilla version 1',5,150000,0,1,14,15,'los mejores tenis del mundo','https://i.postimg.cc/wxSMpF0t/blue.png',200000,6),(32,'Tennis adidas maravilla version 2',2,70000,2,2,15,13,'los mejores tenis del mundo','https://i.postimg.cc/WpDzCx6L/pink.png',100000,2),(33,'Tennis nike maravilla version 3',4,90000,10,3,16,4,'los mejores tenis del mundo','https://i.postimg.cc/Fs3RscBT/yellow.png',140000,3),(34,'Tennis reebok universo version 1',3,180000,10,1,17,16,'los mejores tenis del mundo','https://i.postimg.cc/wxSMpF0t/blue.png',250000,4),(35,'Tennis adidas universo version 2',5,190000,8,2,18,17,'los mejores tenis del mundo','https://i.postimg.cc/WpDzCx6L/pink.png',300000,5),(36,'Tennis nike universo version 3',5,200000,7,3,19,5,'los mejores tenis del mundo','https://i.postimg.cc/Fs3RscBT/yellow.png',310000,7),(37,'Tennis reebok galaxy version 1',5,300000,2,1,20,18,'los mejores tenis del mundo','https://i.postimg.cc/wxSMpF0t/blue.png',380000,8),(38,'Tennis adidas galaxy version 2',5,250000,0,2,21,14,'los mejores tenis del mundo','https://i.postimg.cc/WpDzCx6L/pink.png',320000,9),(39,'Tennis nike galaxy version 3',4,130000,10,3,22,2,'los mejores tenis del mundo','https://i.postimg.cc/Fs3RscBT/yellow.png',190000,1),(40,'Tennis nike jordan version xx',5,400000,5,3,14,20,'los mejores tenis del mundo','https://i.postimg.cc/wxSMpF0t/blue.png',500000,10);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -274,4 +278,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-08 17:58:26
+-- Dump completed on 2022-12-19 11:45:19

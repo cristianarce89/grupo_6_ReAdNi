@@ -1,6 +1,8 @@
+const { DataTypes } = require("sequelize");
+
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = 'Product'; 
+    let alias = 'Product';
     let cols = {
         idProduct: {
             type: dataTypes.INTEGER,
@@ -9,10 +11,22 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         name: {
-            type: dataTypes.STRING 
+            type: dataTypes.STRING
+        },
+
+        description: {
+            type: dataTypes.STRING
         },
 
         ranking: {
+            type: dataTypes.INTEGER
+        },
+
+        id_color: {
+            type: dataTypes.INTEGER
+        },
+
+        priceAnt: {
             type: dataTypes.INTEGER
         },
 
@@ -34,6 +48,9 @@ module.exports = (sequelize, dataTypes) => {
 
         id_sizes: {
             type: dataTypes.INTEGER
+        },
+        imagen: {
+            type: dataTypes.INTEGER
         }
     }
 
@@ -43,6 +60,26 @@ module.exports = (sequelize, dataTypes) => {
     }
 
 
-    const Product = sequelize.define(alias,cols,config);
+    const Product = sequelize.define(alias, cols, config);
+
+    Product.associate = function (models) {
+        Product.belongsTo(models.Category, {
+            as: 'category',
+            foreignkey: 'categories_id'
+        })
+        Product.associate = function (models) {
+            Product.belongsTo(models.Market, {
+                as: 'market',
+                foreignkey: 'markets_id'
+            })
+            Product.associate = function (models) {
+                Product.belongsTo(models.Size, {
+                    as: 'size',
+                    foreignkey: 'size_id'
+                })
+            }
+        }
+
+    }
     return Product;
 }

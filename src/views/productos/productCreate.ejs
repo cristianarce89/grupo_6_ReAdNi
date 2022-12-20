@@ -19,28 +19,28 @@
 
   <div class="container productCreate">
     <!-- en el action ponemos la ruta del formulario que va capturar los datos, en enctype es para que los datos viajen-->
-    <form action="/productCreate" method="POST" class="formulario" enctype="multipart/form-data">
+    <form action="/administrar/productCreate" method="POST" class="formulario" enctype="multipart/form-data">
       <div class="container titulo">
         <h2 class="products-title">Formulario<br> Creación de productos</h2>
       </div>
       <div class="row nameProduct">
-        <input type="text" id="nombre" name="nombre" class="formulario__input">
+        <input type="text" id="name" name="name" class="formulario__input">
         <label for="titulo" class="formulario__label">Nombre del producto</label>
       </div>
       <div class="row description">
-        <label for="descripcion" class="" name="descripcion">Descripción:</label>
+        <label for="description" class="" name="description">Descripción:</label>
         <textarea name="descripcion" id="descripcion" class="formulario__textArea"></textarea>
       </div>
       <div class="row priceProduct">
-        <input type="number" id="precioAnt" name="precioAnt" class="formulario__input">
+        <input type="number" id="priceAnt" name="priceAnt" class="formulario__input">
         <label for="precioAnt" class="formulario__label">Precio anterior del producto</label>
       </div>
       <div class="row priceProduct">
-        <input type="number" id="precio" name="precio" class="formulario__input">
+        <input type="number" id="price" name="price" class="formulario__input">
         <label for="precio" class="formulario__label">Precio actual del producto</label>
       </div>
       <div class="row discount">
-        <input type="number" id="descuento" name="descuento" class="formulario__input">
+        <input type="number" id="discounts" name="discounts" class="formulario__input">
         <label for="descuento" class="formulario__label">Descuento</label>
       </div>
       <div class="row discount">
@@ -48,13 +48,13 @@
         <label for="ranking" class="formulario__label">Valor en estrellas</label>
       </div>
       <div class="row nameProduct">
-        <input type="text" id="color" name="color" class="formulario__input">
+        <input type="text" id="color" name="id_color" class="formulario__input">
         <label for="color" class="formulario__label">Color</label>
       </div>
 
       <div class="row category">
-        <label for="categoria">Categorías</label>
-        <select name="categoria" id="categoria" class="formulario__select">
+        <label for="id_category">Categorías</label>
+        <select name="id_category" id="id_category" class="formulario__select">
           <option value="">-- Selecciona --</option>
           <option value="Hombre">Hombre</option>
           <option value="Mujer">Mujer</option>
@@ -63,26 +63,39 @@
       </div>
 
       <div class="row category">
-        <label for="tallas">Tallas</label>
-        <select name="talla" id="tallas" class="formulario__select">
-          <option value="35">-- Selecciona --</option>
-          <option value="36">36</option>
-          <option value="37">37</option>
-          <option value="38">38</option>
-          <option value="39">39</option>
-          <option value="40">40</option>
-          <option value="41">41</option>
-          <option value="42">42</option>
+        <label for="id_sizes">Tallas</label>
+        <select name="id_sizes" id="id_sizes" class="formulario__select">
+          <option value="">-- Selecciona --</option>
+          <option value="1">25</option>
+          <option value="2">26</option>
+          <option value="3">27</option>
+          <option value="4">28</option>
+          <option value="5">29</option>
+          <option value="6">30</option>
+          <option value="7">31</option>
+          <option value="8">32</option>
+          <option value="9">33</option>
+          <option value="10">34</option>
+          <option value="11">35</option>
+          <option value="12">36</option>
+          <option value="13">37</option>
+          <option value="14">38</option>
+          <option value="15">39</option>
+          <option value="16">40</option>
+          <option value="17">41</option>
+          <option value="18">42</option>
+          <option value="19">43</option>
+          <option value="20">44</option>
         </select>
       </div>
 
       <div class="row category">
         <label for="marca">Marcas</label>
-        <select name="marca" id="marcas" class="formulario__select">
+        <select name="id_markets" id="id_markets" class="formulario__select">
           <option value="">-- Selecciona --</option>
-          <option value="Reebok">Reebok</option>
-          <option value="Adidas">Adidas</option>
-          <option value="Nike">Nike</option>
+          <option value=1>Reebok</option>
+          <option value=2>Adidas</option>
+          <option value=3>Nike</option>
         </select>
       </div>
 
