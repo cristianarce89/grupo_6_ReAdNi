@@ -27,15 +27,16 @@ const adminController = {
 //Aqui dispongo las rutas para trabajar con el CRUD
 
     create: (req,res) => {
+        console.log(db.Product)
         Product.create(
             {
                 name: req.body.name,
                 description: req.body.description,
-                priceAnt: req.body.precioAnt,
+                priceAnt: req.body.priceAnt,
                 price: req.body.price,
                 discounts: req.body.discounts,
                 rating: req.body.rating,
-                color: req.body.color,
+                id_color: req.body.id_color,
                 id_category: req.body.id_category,
                 id_sizes: req.body.id_sizes,
                 id_markets: req.body.id_markets,
