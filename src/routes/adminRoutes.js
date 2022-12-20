@@ -18,11 +18,12 @@ const upload = multer({storage})
 //------------------------------------------------------------------
 
 router.get('/administrar', adminController.list)
-router.get('/productCreate', adminController.new);
+
+router.get('/administrar/productCreate', adminController.new);
+router.post('/administrar/productCreate'/* ,upload.single('imagen') */, adminController.create);
+
 router.get('/administrar/productDetail/:id', adminController.detail);
 router.get('/administrar/productEdit/:id', adminController.edit);
-
-// router.post('/productCreate',upload.single('imagen'), adminController.save);
 
 // router.get('/admin/productEdit/:id', adminController.edit);
 // router.post('/admin/productEdit/:id', upload.single('imagen'),adminController.update);
