@@ -1,56 +1,57 @@
 const { DataTypes } = require("sequelize");
+// const { foreignKeys } = require("sequelize/types/query-types");
 
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 
     let alias = 'Product';
     let cols = {
         idProduct: {
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
 
         name: {
-            type: dataTypes.STRING
+            type: DataTypes.STRING
         },
 
         description: {
-            type: dataTypes.STRING
+            type: DataTypes.STRING
         },
 
         ranking: {
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER
         },
 
-        id_color: {
-            type: dataTypes.INTEGER
+        color: {
+            type: DataTypes.STRING
         },
 
         priceAnt: {
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER
         },
 
         price: {
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER
         },
 
-        discounts: {
-            type: dataTypes.INTEGER
+        discount: {
+            type: DataTypes.INTEGER
         },
 
-        id_markets: {
-            type: dataTypes.INTEGER
+        market: {
+            type: DataTypes.STRING
         },
 
-        id_categories: {
-            type: dataTypes.INTEGER
+        category: {
+            type: DataTypes.STRING
         },
 
-        id_sizes: {
-            type: dataTypes.INTEGER
+        size: {
+            type: DataTypes.INTEGER
         },
         imagen: {
-            type: dataTypes.INTEGER
+            type: DataTypes.STRING
         }
     }
 
@@ -59,27 +60,35 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
 
-
     const Product = sequelize.define(alias, cols, config);
 
-    Product.associate = function (models) {
-        Product.belongsTo(models.Category, {
-            as: 'category',
-            foreignkey: 'categories_id'
-        })
-        Product.associate = function (models) {
-            Product.belongsTo(models.Market, {
-                as: 'market',
-                foreignkey: 'markets_id'
-            })
-            Product.associate = function (models) {
-                Product.belongsTo(models.Size, {
-                    as: 'size',
-                    foreignkey: 'size_id'
-                })
-            }
-        }
+    // Product.associate= (models) =>{
+    //     Product.belongsToMany(models.Category, {
+    //         as: 'Products'
+    //     }),
 
-    }
+    //     Product.belongsToMany(models.Size, {
+    //         through: 'product_size',
+    //         foreignKey: 'id_product',
+    //         otherKey: 'id_size'
+    //     }),
+
+    //     Product.belongsToMany(models.Color, {
+    //         through: 'product_color',
+    //         foreignKey: 'id_product',
+    //         otherKey: 'id_color'
+    //     }),
+
+    //     Product.belongsToMany(models.User, {
+    //         through: 'user_product',
+    //         foreignKey: 'id_product',
+    //         otherKey: 'id_user'
+    //     }),
+
+    //     Product.belongsToMany(models.Market, {
+    //         as: 'Products'
+    //     })
+    // }
+
     return Product;
 }

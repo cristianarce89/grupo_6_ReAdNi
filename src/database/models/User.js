@@ -1,49 +1,45 @@
-module.exports = (sequelize, dataTypes) => {
+// module.exports = (sequelize, DataTypes) => {
 
-    let alias = 'User';
-    let cols = {
-        idUser: {
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
+//     let alias = 'User';
+//     let cols = {
+//         idUser: {
+//             type: DataTypes.INTEGER,
+//             primaryKey: true,
+//             autoIncrement: true
+//         },
 
-        name: {
-            type: dataTypes.STRING
-        },
+//         name: {
+//             type: DataTypes.STRING
+//         },
 
-        email: {
-            type: dataTypes.STRING
-        },
+//         email: {
+//             type: DataTypes.STRING
+//         },
 
-        cellphone: {
-            type: dataTypes.INTEGER
-        },
+//         cellphone: {
+//             type: DataTypes.INTEGER
+//         },
 
-        address: {
-            type: dataTypes.STRING
-        },
+//         address: {
+//             type: DataTypes.STRING
+//         }
+        
+//     }
 
-        id_cities: {
-            type: dataTypes.INTEGER
-        }
+//     let config = {
+//         tableName: 'User',
+//         timestamps: false
+//     }
 
+//     const User = sequelize.define(alias, cols, config);
 
-    }
+//     // User.associate= (models) =>{
+//     //     User.belongsToMany(models.Product, {
+//     //         through: 'user_product',
+//     //         foreignKey: 'id_user',
+//     //         otherKey: 'id_product'
+//     //     })
+//     // }
 
-    let config = {
-        tableName: 'User',
-        timestamps: false
-    }
-
-    const User = sequelize.define(alias, cols, config);
-
-    User.associate = function (models) {
-        User.belongsTo(models.City, {
-            as: 'city',
-            foreigkey: 'cities_id'
-        })
-
-    }
-    return User;
-}
+//     return User;
+// }

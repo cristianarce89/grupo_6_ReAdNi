@@ -8,52 +8,33 @@ CREATE TABLE market
 (
 idMarket INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 name varchar(50) NOT NULL,
-id_colors INT NOT NULL,
-FOREIGN KEY (id_colors) REFERENCES color(idColor)
 );
 
 CREATE TABLE category
 (
 idCategory INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 name varchar(10) NOT NULL,
-id_markets INT NOT NULL,
-FOREIGN KEY (id_markets) REFERENCES market(idMarket)
-);
-
-CREATE TABLE city
-(
-idCity INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-name varchar(50) NOT NULL
 );
 
 CREATE TABLE size
 (
 idSize INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-number INT(3) NOT NULL
+number INT(3) NOT NULL UNSIGNED
 );
 
 CREATE TABLE product
 (
 idProduct INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 name varchar(50) NOT NULL,
-ranking INT(1) NOT NULL,
-price INT NOT NULL,
-discounts INT NOT NULL,
-id_markets INT NOT NULL,
-FOREIGN KEY (id_markets) REFERENCES market(idMarket),
-id_categories INT NOT NULL,
-FOREIGN KEY (id_categories) REFERENCES category(idCategory),
-id_sizes INT NOT NULL,
-FOREIGN KEY (id_sizes) REFERENCES size(idSize)
-);
-
-CREATE TABLE product_size
-(
-idProduct_size INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-id_products INT NOT NULL,
-FOREIGN KEY (id_products) REFERENCES product(idProduct),
-id_sizes INT NOT NULL,
-FOREIGN KEY (id_sizes) REFERENCES size(idSize)
+ranking INT(1) NOT NULL UNSIGNED,
+priceAnt INT NOT NULL UNSIGNED,
+price INT NOT NULL UNSIGNED,
+discounts INT NOT NULL UNSIGNED,
+description VARCHAR(50) NOT NULL,
+imagen VARCHAR(50) NOT NULL,
+markets VARCHAR(10),
+size INT(2) NOT NULL UNSIGNED,
+categorie VARCHAR(50) NOT NULL,
 );
 
 CREATE TABLE user
@@ -61,17 +42,13 @@ CREATE TABLE user
 idUser INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 name varchar(50) NOT NULL,
 email VARCHAR(50) NOT NULL,
-cellphone INT(10) NOT NULL,
-address VARCHAR(50) NOT NULL,
-id_cities INT NOT NULL,
-FOREIGN KEY (id_cities) REFERENCES city(idCity)
+cellphone INT(10) NOT NULL UNSIGNED,
+address VARCHAR(80) NOT NULL
 );
 
 CREATE TABLE user_product
 (
 idUser_product INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-id_products INT NOT NULL,
-FOREIGN KEY (id_products) REFERENCES product(idProduct),
-id_users INT NOT NULL,
-FOREIGN KEY (id_users) REFERENCES user(idUser)
+id_products,
+id_users,
 );

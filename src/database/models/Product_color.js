@@ -1,28 +1,29 @@
 // module.exports = (sequelize, DataTypes) => {
 
-//     let alias = 'User_product'; 
+//     let alias = 'Product_color'; 
 //     let cols = {
-//         idUser_product: {
+//         idProducto_color: {
 //             type: DataTypes.INTEGER,
 //             primaryKey: true,
 //             autoIncrement: true
 //         },
 
-//         id_user: {
+//         id_product: {
 //             type: DataTypes.INTEGER
 //         },
 
-//         id_product: {
+//         id_color: {
 //             type: DataTypes.INTEGER
 //         }
-        
+
 //     }
 
 //     let config = {
-//         tableName: 'User_product',
+//         tableName: 'Product_color',
 //         timestamps: false
 //     }
 
-//     const User_product = sequelize.define(alias,cols,config);
-//     return User_product;
+//     const Product_color = sequelize.define(alias,cols,config);
+//     return Product_color;
+
 // }

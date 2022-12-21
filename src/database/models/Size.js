@@ -1,24 +1,37 @@
-module.exports = (sequelize, dataTypes) => {
+// module.exports = (sequelize, DataTypes) => {
 
-    let alias = 'Size'; 
-    let cols = {
-        idSize: {
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
+//     let alias = 'Size';
+//     let cols = {
+//         idSize: {
+//             type: DataTypes.INTEGER,
+//             primaryKey: true,
+//             autoIncrement: true
+//         },
 
-        Number: {
-            type: dataTypes.INTEGER
-        }
+//         number: {
+//             type: DataTypes.INTEGER
+//         }
 
-    }
+//     }
 
-    let config = {
-        tableName: 'Size',
-        timestamps: false
-    }
+//     let config = {
+//         tableName: 'Size',
+//         timestamps: false
+//     }
 
-    const Size = sequelize.define(alias,cols,config);
-    return Size;
-}
+//     const Size = sequelize.define(alias, cols, config);
+
+
+//     // Size.associate = (models) => {
+//     //     Size.belongsToMany(models.Product, {
+//     //         through: 'product_size',
+//     //         foreignKey: 'id_size',
+//     //         otherKey: 'id_product'
+//     //     }),
+//     //     Size.belongsToMany(models.Market, {
+//     //         as: 'Sizes'
+//     //     })
+//     // }
+
+// return Size;
+// }

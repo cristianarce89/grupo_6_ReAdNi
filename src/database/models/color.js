@@ -1,35 +1,37 @@
-module.exports = (sequelize, dataTypes) => {
+// module.exports = (sequelize, DataTypes) => {
 
-    let alias = 'color'; 
-    let cols = {
-        idColor: {
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
+//     let alias = 'Color';
+//     let cols = {
+//         idColor: {
+//             type: DataTypes.INTEGER,
+//             primaryKey: true,
+//             autoIncrement: true
+//         },
 
-        name: {
-            type: dataTypes.STRING 
-        }
+//         name: {
+//             type: DataTypes.STRING
+//         }
 
-    }
+//     }
 
-    let config = {
-        tableName: 'color',
-        timestamps: false
-    }
+//     let config = {
+//         tableName: 'Color',
+//         timestamps: false
+//     }
 
-    const color = sequelize.define(alias,cols,config);
+//     const Color = sequelize.define(alias, cols, config);
 
-    Color.associate = function (models) {
-        Color.hasMany(models.Product, {
-            as: 'product',
-            foreigkey: 'product_id'
-        })
+//     // Color.associate = (models) => {
+//     //     Color.belongsToMany(models.Product, {
+//     //         through: 'product_color',
+//     //         foreignKey: 'id_color',
+//     //         otherKey: 'id_product'
+//     //     }),
+//     //     Color.belongsToMany(models.Market, {
+//     //         as: 'Colors'
+//     //     })
+//     // }
 
+//     return Color;
 
- }
-    return color;
-
-    
-}
+// }

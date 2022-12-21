@@ -8,6 +8,7 @@ const Product = db.Product;
 
 const adminController = {
     'list': (req, res) => {
+        console.log(Product)
         db.Product.findAll()
             .then(product => {
                 res.render('admin/administrador', {product})              
