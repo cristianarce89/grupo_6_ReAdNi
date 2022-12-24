@@ -1,9 +1,6 @@
-const { DataTypes } = require("sequelize");
-// const { foreignKeys } = require("sequelize/types/query-types");
-
 module.exports = (sequelize, DataTypes) => {
 
-    let alias = 'Product';
+    let alias = 'Product'; // como se nombre el modelo
     let cols = {
         idProduct: {
             type: DataTypes.INTEGER,
@@ -12,55 +9,60 @@ module.exports = (sequelize, DataTypes) => {
         },
 
         name: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(50),
         },
 
         description: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(100),
         },
 
         ranking: {
-            type: DataTypes.INTEGER
-        },
-
-        color: {
-            type: DataTypes.STRING
+            type: DataTypes.INTEGER,
         },
 
         priceAnt: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
         },
 
         price: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
         },
 
         discount: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
         },
 
         market: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(10),
+        },
+
+        color: {
+            type: DataTypes.STRING(20),
         },
 
         category: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(10),
         },
 
         size: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
         },
+
         imagen: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(100),
         }
     }
 
     let config = {
-        tableName: 'Product',
+        tableName: 'product', //nombre de la tabla en la base de datos
         timestamps: false
     }
 
     const Product = sequelize.define(alias, cols, config);
+    // console.log("este es el resultado en el modelo product " + Product) // este es el resultado en el modelo product class extends Model {}
+    return Product
+}
+
 
     // Product.associate= (models) =>{
     //     Product.belongsToMany(models.Category, {
@@ -90,5 +92,3 @@ module.exports = (sequelize, DataTypes) => {
     //     })
     // }
 
-    return Product;
-}

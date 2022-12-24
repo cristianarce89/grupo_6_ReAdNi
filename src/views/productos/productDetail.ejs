@@ -18,8 +18,7 @@
       <div class="product-imgs">
         <div class="img-display">
           <div class="img-showcase">
-            <img src="<%= product.imagen%>" alt="shoe image">
-            <% console.log("esta es la vista de productDetail mostrando el product num " + product) %> 
+            <img src="<%= products.imagen%>" alt="shoe image"> 
             <img src="https://i.postimg.cc/0QVsrWQB/ta-3.webp" alt="shoe image">
             <img src="https://i.postimg.cc/VvTPWJX9/ta-4.webp" alt="shoe image">
             <img src="https://i.postimg.cc/mDL4Lfb9/ta-2.webp" alt="shoe image">
@@ -52,45 +51,45 @@
       <!-- Estrellas -->
       <div class="product-content">
         <h2 class="product-title">
-          <%= product.name %>
+          <%= products.name %>
         </h2>
-        <a href="#" class="product-link">visita tienda <%= product.id_markets%></a>
+        <a href="#" class="product-link">visita tienda <%= products.market%></a>
         <div class="product-rating">
-          <% if (product.ranking==1) { %>
+          <% if (products.ranking==1) { %>
             <i class="fas fa-star"></i>
             <i class="fa-regular fa-star"></i>
             <i class="fa-regular fa-star"></i>
             <i class="fa-regular fa-star"></i>
             <i class="fa-regular fa-star"></i>
             <span>
-              <%= product.ranking%>
+              <%= products.ranking%>
             </span>
-            <% } else if (product.ranking==2) { %>
+            <% } else if (products.ranking==2) { %>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fa-regular fa-star"></i>
               <i class="fa-regular fa-star"></i>
               <i class="fa-regular fa-star"></i>
               <span>
-                <%= product.ranking%>
+                <%= products.ranking%>
               </span>
-              <% } else if (product.ranking==3) { %>
+              <% } else if (products.ranking==3) { %>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
                 <span>
-                  <%= product.ranking%>
+                  <%= products.ranking%>
                 </span>
-                <% } else if (product.ranking==4) { %>
+                <% } else if (products.ranking==4) { %>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fa-regular fa-star"></i>
                   <span>
-                    <%= product.ranking%>
+                    <%= products.ranking%>
                   </span>
                   <% } else { %>
                     <i class="fas fa-star"></i>
@@ -99,31 +98,31 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <span>
-                      <%= product.ranking%>
+                      <%= products.ranking%>
                     </span>
                     <% } %>
         </div>
 
         <div class="product-price">
-          <p class="last-price">Precio anterior: <span>$<%= product.priceAnt%></span></p>
-          <p class="new-price">Precio en Oferta: <span>$<%= product.price%> (<%= product.discounts%>%)</span></p>
+          <p class="last-price">Precio anterior: <span>$<%= products.priceAnt%></span></p>
+          <p class="new-price">Precio en Oferta: <span>$<%= products.price%> (<%= products.discount%>%)</span></p>
         </div>
 
         <div class="product-detail">
           <h2>Información </h2>
           <p>
-            <%= product.description%>
+            <%= products.description%>
           </p>
-          <p>Conocé las <%= product.name%>, confiable, cómoda y siempre lista para correr.</p>
+          <p>Conocé las <%= products.name%>, confiable, cómoda y siempre lista para correr.</p>
           <!-- apartado de check -->
           <ul>
             <li><i class="fa-sharp fa-solid fa-circle-check"></i>Color: <span>
-                <%= product.id_color%>
+                <%= products.color%>
               </span></li>
             <li><i class="fa-sharp fa-solid fa-circle-check"></i>Disponible: <span>Si</span></li>
             <li><i class="fa-sharp fa-solid fa-circle-check"></i>Categoria: <span>Tenis Deportivos</span></li>
             <li><i class="fa-sharp fa-solid fa-circle-check"></i>Genero: <span>
-                <%= product.id_categories%>
+                <%= products.category%>
               </span></li>
           </ul>
         </div>
