@@ -1,85 +1,94 @@
-const { DataTypes } = require("sequelize");
+module.exports = (sequelize, DataTypes) => {
 
-module.exports = (sequelize, dataTypes) => {
-
-    let alias = 'Product';
+    let alias = 'Product'; // como se nombre el modelo
     let cols = {
         idProduct: {
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
 
         name: {
-            type: dataTypes.STRING
+            type: DataTypes.STRING(50),
         },
 
         description: {
-            type: dataTypes.STRING
+            type: DataTypes.STRING(100),
         },
 
         ranking: {
-            type: dataTypes.INTEGER
-        },
-
-        id_color: {
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER,
         },
 
         priceAnt: {
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER,
         },
 
         price: {
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER,
         },
 
-        discounts: {
-            type: dataTypes.INTEGER
+        discount: {
+            type: DataTypes.INTEGER,
         },
 
-        id_markets: {
-            type: dataTypes.INTEGER
+        market: {
+            type: DataTypes.STRING(10),
         },
 
-        id_categories: {
-            type: dataTypes.INTEGER
+        color: {
+            type: DataTypes.STRING(20),
         },
 
-        id_sizes: {
-            type: dataTypes.INTEGER
+        category: {
+            type: DataTypes.STRING(10),
         },
+
+        size: {
+            type: DataTypes.INTEGER,
+        },
+
         imagen: {
-            type: dataTypes.INTEGER
+            type: DataTypes.STRING(100),
         }
     }
 
     let config = {
-        tableName: 'Product',
+        tableName: 'product', //nombre de la tabla en la base de datos
         timestamps: false
     }
 
-
     const Product = sequelize.define(alias, cols, config);
-
-    Product.associate = function (models) {
-        Product.belongsTo(models.Category, {
-            as: 'category',
-            foreignkey: 'categories_id'
-        })
-        Product.associate = function (models) {
-            Product.belongsTo(models.Market, {
-                as: 'market',
-                foreignkey: 'markets_id'
-            })
-            Product.associate = function (models) {
-                Product.belongsTo(models.Size, {
-                    as: 'size',
-                    foreignkey: 'size_id'
-                })
-            }
-        }
-
-    }
-    return Product;
+    // console.log("este es el resultado en el modelo product " + Product) // este es el resultado en el modelo product class extends Model {}
+    return Product
 }
+
+
+    // Product.associate= (models) =>{
+    //     Product.belongsToMany(models.Category, {
+    //         as: 'Products'
+    //     }),
+
+    //     Product.belongsToMany(models.Size, {
+    //         through: 'product_size',
+    //         foreignKey: 'id_product',
+    //         otherKey: 'id_size'
+    //     }),
+
+    //     Product.belongsToMany(models.Color, {
+    //         through: 'product_color',
+    //         foreignKey: 'id_product',
+    //         otherKey: 'id_color'
+    //     }),
+
+    //     Product.belongsToMany(models.User, {
+    //         through: 'user_product',
+    //         foreignKey: 'id_product',
+    //         otherKey: 'id_user'
+    //     }),
+
+    //     Product.belongsToMany(models.Market, {
+    //         as: 'Products'
+    //     })
+    // }
+

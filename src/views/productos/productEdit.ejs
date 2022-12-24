@@ -19,37 +19,37 @@
 
     <div class="container productCreate">
         <!-- en el action ponemos la ruta del formulario que va capturar los datos, en enctype es para que los datos viajen-->
-        <form action="/administrar/update/<%= product.idProduct %>" method="POST" class="formulario" enctype="multipart/form-data">
+        <form action="/administrar/update/<%= products.idProduct %>" method="POST" class="formulario" enctype="multipart/form-data">
             <div class="container titulo">
                 <h2 class="products-title">Formulario<br> Actualizacion de productos</h2>
             </div>
             <div class="row nameProduct">
-                <input type="text" id="nombre" name="nombre" class="formulario__input" value="<%= product.name %>">
+                <input type="text" id="nombre" name="nombre" class="formulario__input" value="<%= products.name %>">
                 
                 <label for="titulo" class="formulario__label">Nombre del producto</label>
             </div>
             <div class="row description">
                 <label for="descripcion" class="" name="descripcion" >Descripción:</label>
-                <textarea name="descripcion" id="descripcion" class="formulario__textArea" value="<%= product.description%>"></textarea>
+                <textarea name="descripcion" id="descripcion" class="formulario__textArea" value="<%= products.description%>"></textarea>
             </div>
             <div class="row priceProduct">
-                <input type="number" id="precioAnt" name="precioAnt" class="formulario__input" value="<%= product.precioAnt%>">
+                <input type="number" id="precioAnt" name="precioAnt" class="formulario__input" value="<%= products.priceAnt%>">
                 <label for="precioAnt" class="formulario__label">Precio anterior del producto</label>
             </div>
             <div class="row priceProduct">
-                <input type="number" id="precio" name="precio" class="formulario__input" value="<%= product.price%>">
+                <input type="number" id="precio" name="precio" class="formulario__input" value="<%= products.price%>">
                 <label for="precio" class="formulario__label">Precio actual del producto</label>
             </div>
             <div class="row discount">
-                <input type="number" id="descuento" name="descuento" class="formulario__input" value="<%= product.discounts%>">
+                <input type="number" id="descuento" name="descuento" class="formulario__input" value="<%= products.discount%>">
                 <label for="descuento" class="formulario__label">Descuento</label>
             </div>
             <div class="row discount">
-                <input type="number" id="ranking" name="ranking" class="formulario__input" min="1" max="5" value="<%= product.ranking%>">
+                <input type="number" id="ranking" name="ranking" class="formulario__input" min="1" max="5" value="<%= products.ranking%>">
                 <label for="ranking" class="formulario__label">Valor en estrellas</label>
             </div>
             <div class="row nameProduct">
-                <input type="text" id="color" name="color" class="formulario__input" value="<%= product.id_color%>">
+                <input type="text" id="color" name="color" class="formulario__input" value="<%= products.color%>">
                 <label for="color" class="formulario__label">Color</label>
             </div>
 
@@ -57,36 +57,36 @@
                 <label for="categoria">Categorías</label>
                 <select name="categoria" id="categoria" class="formulario__select">
                     <option value="" >-- Selecciona --</option>
-                    <option value="Hombre" <%= product.id_categories == 1 ? "selected" : null %>>Hombre</option>
-                    <option value="Mujer" <%= product.id_categories == 2 ? "selected" : null %>>Mujer</option>
-                    <option value="Niño" <%= product.id_categories == 3 ? "selected" : null %>>Niño</option>
+                    <option value="Hombre" <%= products.category == "hombres" ? "selected" : null %>>Hombres</option>
+                    <option value="Mujer" <%= products.category == "mujeres" ? "selected" : null %>>Mujeres</option>
+                    <option value="Niño" <%= products.category == "niños" ? "selected" : null %>>Niños</option>
                 </select>
             </div>
 
             <div class="row category">
-                <label for="tallas">Tallas</label>
+                <label for="talla">Tallas</label>
                 <select name="talla" id="tallas" class="formulario__select">
                     <option value="">-- Selecciona --</option>
-                    <option value="1" <%= product.id_sizes == 1 ? "selected" : null %>>1</option>
-                    <option value="2" <%= product.id_sizes == 2 ? "selected" : null %>>2</option>
-                    <option value="3" <%= product.id_sizes == 3 ? "selected" : null %>>3</option>
-                    <option value="4" <%= product.id_sizes == 4 ? "selected" : null %>>4</option>
-                    <option value="5" <%= product.id_sizes == 5 ? "selected" : null %>>5</option>
-                    <option value="6" <%= product.id_sizes == 6 ? "selected" : null %>>6</option>
-                    <option value="7" <%= product.id_sizes == 7 ? "selected" : null %>>7</option>
-                    <option value="8" <%= product.id_sizes == 8 ? "selected" : null %>>8</option>
-                    <option value="9" <%= product.id_sizes == 9 ? "selected" : null %>>9</option>
-                    <option value="10" <%= product.id_sizes == 10 ? "selected" : null %>>10</option>
-                    <option value="11" <%= product.id_sizes == 11 ? "selected" : null %>>11</option>
-                    <option value="12" <%= product.id_sizes == 12 ? "selected" : null %>>12</option>
-                    <option value="13" <%= product.id_sizes == 13 ? "selected" : null %>>13</option>
-                    <option value="14" <%= product.id_sizes == 14 ? "selected" : null %>>14</option>
-                    <option value="15" <%= product.id_sizes == 15 ? "selected" : null %>>15</option>
-                    <option value="16" <%= product.id_sizes == 16 ? "selected" : null %>>16</option>
-                    <option value="17" <%= product.id_sizes == 17 ? "selected" : null %>>17</option>
-                    <option value="18" <%= product.id_sizes == 18 ? "selected" : null %>>18</option>
-                    <option value="19" <%= product.id_sizes == 19 ? "selected" : null %>>19</option>
-                    <option value="20" <%= product.id_sizes == 20 ? "selected" : null %>>20</option>
+                    <option value="1" <%= products.size == 1 ? "selected" : null %>>25</option>
+                    <option value="2" <%= products.size == 2 ? "selected" : null %>>26</option>
+                    <option value="3" <%= products.size == 3 ? "selected" : null %>>27</option>
+                    <option value="4" <%= products.size == 4 ? "selected" : null %>>28</option>
+                    <option value="5" <%= products.size == 5 ? "selected" : null %>>29</option>
+                    <option value="6" <%= products.size == 6 ? "selected" : null %>>30</option>
+                    <option value="7" <%= products.size == 7 ? "selected" : null %>>31</option>
+                    <option value="8" <%= products.size == 8 ? "selected" : null %>>32</option>
+                    <option value="9" <%= products.size == 9 ? "selected" : null %>>33</option>
+                    <option value="10" <%= products.size == 10 ? "selected" : null %>>34</option>
+                    <option value="11" <%= products.size == 11 ? "selected" : null %>>35</option>
+                    <option value="12" <%= products.size == 12 ? "selected" : null %>>36</option>
+                    <option value="13" <%= products.size == 13 ? "selected" : null %>>37</option>
+                    <option value="14" <%= products.size == 14 ? "selected" : null %>>38</option>
+                    <option value="15" <%= products.size == 15 ? "selected" : null %>>39</option>
+                    <option value="16" <%= products.size == 16 ? "selected" : null %>>40</option>
+                    <option value="17" <%= products.size == 17 ? "selected" : null %>>41</option>
+                    <option value="18" <%= products.size == 18 ? "selected" : null %>>42</option>
+                    <option value="19" <%= products.size == 19 ? "selected" : null %>>43</option>
+                    <option value="20" <%= products.size == 20 ? "selected" : null %>>44</option>
 
                 </select>
             </div>
@@ -95,22 +95,22 @@
                 <label for="marca">Marcas</label>
                 <select name="marca" id="marcas" class="formulario__select">
                     <option value="">-- Selecciona --</option>
-                    <option value="Reebok" <%= product.id_markets == 1 ? "selected" : null %>>Reebok</option>
-                    <option value="Adidas" <%= product.id_markets == 2 ? "selected" : null %>>Adidas</option>
-                    <option value="Nike" <%= product.id_markets == 3 ? "selected" : null %>>Nike</option>
+                    <option value="Reebok" <%= products.market == "reebok" ? "selected" : null %>>Reebok</option>
+                    <option value="Adidas" <%= products.market == "adidas" ? "selected" : null %>>Adidas</option>
+                    <option value="Nike" <%= products.market == "nike" ? "selected" : null %>>Nike</option>
                 </select>
             </div>
 
             <div class="add-new-photo first" id="add-photo">
                 <input type="file" id="imagen" name="imagen" class="formulario__input">
                 <button type="button" id="boton_add" class="boton_add">
-                    <img src="/images/products/<%= product.image%>">
+                    <img src="<%= products.imagen%>">
                     <!-- <div>
                         <i class="fa-solid fa-image"></i>
                     </div> -->
                     <!-- Agrega una imagen -->
                 </button>
-                <input type="hidden"  name="oldImagen"  value="<%= product.image%>">
+                <input type="hidden"  name="oldImagen"  value="<%= products.imagen%>">
             </div>
 
             <div class="button saveProduct">

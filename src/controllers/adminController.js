@@ -1,70 +1,74 @@
 const path = require('path');
 const db = require('../database/models')
 const sequelize = db.sequelize;
+const {op} = require('sequelize')
 
-
-const Product = db.Product;
-
+const Products = db.Product;
+// console.log('esta es una prueba en el controllador ' + Products) // aca sale: esta es una prueba en el controllador class extends Model {}
 
 const adminController = {
     'list': (req, res) => {
-        db.Product.findAll()
-            .then(product => {
-                res.render('admin/administrador', {product})              
-            })
+        Products.findAll()
+        .then(products => {
+            res.render('admin/administrador', {products})             
+        })        
     },
     'new': (req, res) => {
         res.render('productos/productCreate');
     },
     'detail': (req,res) => {
-        db.Product.findByPk(req.params.id)
-            .then(product => {
-                res.render('productos/productDetail', {product})
-            })
+        Products.findByPk(req.params.id)
+        .then(products => {
+            res.render('productos/productDetail', {products})
+        })
+    },
+    //Aqui dispongo las rutas para trabajar con el CRUD
+    edit: (req,res) => {
+        Products.findByPk(req.params.id)
+        .then(products => {
+            res.render('productos/productEdit', {products})
+        })
+        .catch(error => res.send(error));
     },
 
-
-//Aqui dispongo las rutas para trabajar con el CRUD
-
     create: (req,res) => {
-        console.log(db.Product)
-        Product.create(
+        Products.create(
             {
                 name: req.body.name,
                 description: req.body.description,
                 priceAnt: req.body.priceAnt,
                 price: req.body.price,
-                discounts: req.body.discounts,
-                rating: req.body.rating,
-                id_color: req.body.id_color,
-                id_category: req.body.id_category,
-                id_sizes: req.body.id_sizes,
-                id_markets: req.body.id_markets,
+                discount: req.body.discount,
+                ranking: req.body.ranking,
+                color: req.body.color,
+                category: req.body.category,
+                size: req.body.size,
+                market: req.body.id_market,
                 imagen: req.body.id.imagen
             }
         )
-
-        // db.Product.create ({
-        //     ...req.body
-        // })
-        .then(()=> {
-            console.log(Product)
-            return res.redirect('admin/administrador')})            
+    //     // db.Product.create ({
+    //     //     ...req.body
+    //     // })
+        .then( products => {
+            console.log("este es el metodo create " + products)
+            return res.redirect('admin/administrador')
+        })            
         .catch(error => res.send(error))
     },
-    
-    edit: (req,res) => {
-        Product.findByPk(req.params.id)
-            .then(product => {
-                res.render('productos/productEdit', {product})
-        })
-            .catch(error => res.send(error));
-    }
+
 } 
+module.exports = adminController;
 
 
 
-    module.exports = adminController;
+
+
+
+   
+    
+
+
 
 
 
