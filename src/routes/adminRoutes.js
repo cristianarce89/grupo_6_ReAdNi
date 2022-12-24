@@ -25,6 +25,14 @@ router.post('/administrar/productCreate'/* ,upload.single('imagen') */, adminCon
 router.get('/administrar/productDetail/:id', adminController.detail);
 router.get('/administrar/productEdit/:id', adminController.edit);
 
+
+
+
+
+
+
+
+
 // router.get('/admin/productEdit/:id', adminController.edit);
 // router.post('/admin/productEdit/:id', upload.single('imagen'),adminController.update);
 // router.get('/admin/productDelete/:id', adminController.delete);

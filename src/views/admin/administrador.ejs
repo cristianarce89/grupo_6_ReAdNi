@@ -17,6 +17,11 @@
             <%- include('../partials/headerDesktop.ejs') %>
     </header>
     <main>
+
+        <!-- con este console.log me doy cuenta si esta llamando la tabla en la base de datos y sus filas, como resultado da:[object SequelizeInstance:Product] por cada fila -->
+        <!-- esto va dentro de simbolos ejs 
+        <console.log('Esta es una prueba de renderizar el Administrador' + products)  -->
+
         <div class="titulo">
             <h1>Administrador de ProductoS</h1>
             <a href="/" class="logo-header-desk1" target="blank">
@@ -50,25 +55,25 @@
                 </tr>
             </thead>
             <tbody>
-                
-                <% product.forEach(products => { %> 
+                <!-- aca va el forEach -->
+                <% products.forEach(productsAll => { %> 
                     <tr>
                         <td>
-                            <%= products.idProduct%>
+                            <%= productsAll.idProduct%>
                         </td>
                         <td>
-                            <%= products.name%>                        
+                            <%= productsAll.name%>                        
                         </td>
                         <td>
-                            <%= products.id_categories%>                
+                            <%= productsAll.category%>                
                         </td>
-                        <td><a href="/administrar/productDetail/<%= products.idProduct%> ">
+                        <td><a href="/administrar/productDetail/<%= productsAll.idProduct%> ">
                                 <i class="fa-solid fa-eye"></i>
                             </a></td>
-                        <td><a href="/administrar/productEdit/<%= products.idProduct%> ">
+                        <td><a href="/administrar/productEdit/<%= productsAll.idProduct%> ">
                                 <i class="fa-solid fa-pen"></i>
                             </a></td>
-                        <td><a href="/administrar/productDelete/<%= products.idProduct%>">
+                        <td><a href="/administrar/productDelete/<%= productsAll.idProduct%>">
                                 <i class="fa-solid fa-trash"></i>
                             </a></td>
                     </tr>
