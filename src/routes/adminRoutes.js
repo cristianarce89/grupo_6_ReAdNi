@@ -20,11 +20,11 @@ const upload = multer({storage})
 router.get('/administrar', adminController.list)
 
 router.get('/administrar/productCreate', adminController.new);
+router.get('/administrar/productCreate', adminController.add);
 router.post('/administrar/productCreate'/* ,upload.single('imagen') */, adminController.create);
-
 router.get('/administrar/productDetail/:id', adminController.detail);
 router.get('/administrar/productEdit/:id', adminController.edit);
-
+router.post('/administrar/update/:id', /* upload.any('imagen') */ adminController.update);
 
 
 
@@ -34,7 +34,7 @@ router.get('/administrar/productEdit/:id', adminController.edit);
 
 
 // router.get('/admin/productEdit/:id', adminController.edit);
-// router.post('/admin/productEdit/:id', upload.single('imagen'),adminController.update);
+
 // router.get('/admin/productDelete/:id', adminController.delete);
 
 module.exports = router;

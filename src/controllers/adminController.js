@@ -1,5 +1,6 @@
 const path = require('path');
 const db = require('../database/models')
+// const product = require('../database/models').Product
 const sequelize = db.sequelize;
 const {op} = require('sequelize')
 
@@ -7,16 +8,16 @@ const Products = db.Product;
 // console.log('esta es una prueba en el controllador ' + Products) // aca sale: esta es una prueba en el controllador class extends Model {}
 
 const adminController = {
-    'list': (req, res) => {
+    list: (req, res) => {
         Products.findAll()
         .then(products => {
             res.render('admin/administrador', {products})             
         })        
     },
-    'new': (req, res) => {
+    new: (req, res) => {
         res.render('productos/productCreate');
     },
-    'detail': (req,res) => {
+    detail: (req,res) => {
         Products.findByPk(req.params.id)
         .then(products => {
             res.render('productos/productDetail', {products})
@@ -29,6 +30,44 @@ const adminController = {
             res.render('productos/productEdit', {products})
         })
         .catch(error => res.send(error));
+    },
+    update: (req,res) => {
+        Products.update( 
+            {
+            name: req.body.name,
+            // description: req.body.description,
+            // priceAnt: req.body.priceAnt,
+            // price: req.body.price,
+            // discount: req.body.discount,
+            // ranking: req.body.ranking,
+            // color: req.body.color,
+            // category: req.body.category,
+            // size: req.body.size,
+            // market: req.body.id_market,
+            // imagen: req.body.id.imagen
+        }, {
+            where:{ idProduct:1}
+        })
+        .then(product => {
+            Products.findAll()
+            .then(products => {
+                res.render('admin/administrador', {products})
+            })
+        })
+        .catch(error => res.send(error));
+    },
+
+
+
+    add: function (req, res) {
+        let promGenres = Genres.findAll();
+        let promActors = Actors.findAll();
+        
+        Promise
+        .all([promGenres, promActors])
+        .then(([allGenres, allActors]) => {
+            return res.render(path.resolve(__dirname, '..', 'views',  'moviesAdd'), {allGenres,allActors})})
+        .catch(error => res.send(error))
     },
 
     create: (req,res) => {
@@ -47,26 +86,19 @@ const adminController = {
                 imagen: req.body.id.imagen
             }
         )
-    //     // db.Product.create ({
-    //     //     ...req.body
-    //     // })
-        .then( products => {
+        // Products.create ({
+        //     ...req.body
+        // })
+        .then(() => {
             console.log("este es el metodo create " + products)
             return res.redirect('admin/administrador')
         })            
         .catch(error => res.send(error))
-    },
+    }
 
 } 
 module.exports = adminController;
 
-
-
-
-
-
-   
-    
 
 
 
