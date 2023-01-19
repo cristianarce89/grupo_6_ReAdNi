@@ -35,20 +35,21 @@ const adminController = {
         Products.update( 
             {
             name: req.body.name,
-            // description: req.body.description,
-            // priceAnt: req.body.priceAnt,
-            // price: req.body.price,
-            // discount: req.body.discount,
-            // ranking: req.body.ranking,
-            // color: req.body.color,
-            // category: req.body.category,
-            // size: req.body.size,
-            // market: req.body.id_market,
+            description: req.body.description,
+            priceAnt: req.body.priceAnt,
+            price: req.body.price,
+            discount: req.body.discount,
+            ranking: req.body.ranking,
+            color: req.body.color,
+            category: req.body.category,
+            size: req.body.size,
+            market: req.body.id_market,
             // imagen: req.body.id.imagen
         }, {
             where:{ idProduct:1}
         })
         .then(product => {
+            console.log(product)
             Products.findAll()
             .then(products => {
                 res.render('admin/administrador', {products})
@@ -57,45 +58,48 @@ const adminController = {
         .catch(error => res.send(error));
     },
 
-
-
-    add: function (req, res) {
-        let promGenres = Genres.findAll();
-        let promActors = Actors.findAll();
-        
-        Promise
-        .all([promGenres, promActors])
-        .then(([allGenres, allActors]) => {
-            return res.render(path.resolve(__dirname, '..', 'views',  'moviesAdd'), {allGenres,allActors})})
-        .catch(error => res.send(error))
-    },
-
     create: (req,res) => {
-        Products.create(
-            {
-                name: req.body.name,
-                description: req.body.description,
-                priceAnt: req.body.priceAnt,
-                price: req.body.price,
-                discount: req.body.discount,
-                ranking: req.body.ranking,
-                color: req.body.color,
-                category: req.body.category,
-                size: req.body.size,
-                market: req.body.id_market,
-                imagen: req.body.id.imagen
-            }
-        )
-        // Products.create ({
-        //     ...req.body
-        // })
-        .then(() => {
-            console.log("este es el metodo create " + products)
-            return res.redirect('admin/administrador')
+        // Products.create(
+        //     {
+        //         name: req.body.name,
+        //         description: req.body.description,
+        //         priceAnt: parseInt(req.body.priceAnt, 10),
+        //         price: parseInt(req.body.price, 10),
+        //         discount: parseInt(req.body.discount, 10),
+        //         ranking: parseInt(req.body.ranking, 10),
+        //         color: req.body.color,
+        //         category: req.body.category,
+        //         size: parseInt(req.body.size, 10),
+        //         market: req.body.id_market,
+        //         imagen: req.body.id.imagen
+        //     }
+        // )
+        Products.create ({
+            ...req.body
+        })
+        .then((product)  => {
+            Products.findAll()
+            .then((products)=>{
+                return res.render('administrador', {products})
+            })
         })            
         .catch(error => res.send(error))
-    }
+    },
+    // delete: (req, res) => {
+    //     Products.findByPk(req.params.id)
+    //     .then(product => {
+    //         res.render('admin/administrador', {product})
+    //     })
+    //     .catch(error => res.send(error))
+    // }
 
+    destroy: (req, res) => {
+        Products.destroy({where: {idProduct : req.params.id}, force: true})
+        .then((product) => {
+            return res.render('admin/administrador', {product})
+        })
+        .catch(error => res.send(error))
+    },
 } 
 module.exports = adminController;
 

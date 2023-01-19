@@ -3,9 +3,9 @@
 
 <head>
     <%- include('../partials/head.ejs') %>
-        <link href="/stylesheets/header.css" rel="stylesheet">
-        <link href="/stylesheets/footer.css" rel="stylesheet">
-        <link href="/stylesheets/admin/administrador.css" rel="stylesheet">
+        <link href="./stylesheets/header.css" rel="stylesheet">
+        <link href="./stylesheets/footer.css" rel="stylesheet">
+        <link href="./stylesheets/admin/administrador.css" rel="stylesheet">
         <title>Administrador Productos</title>
 </head>
 
@@ -73,7 +73,7 @@
                         <td><a href="/administrar/productEdit/<%= productsAll.idProduct%> ">
                                 <i class="fa-solid fa-pen"></i>
                             </a></td>
-                        <td><a href="/administrar/productDelete/<%= productsAll.idProduct%>">
+                        <td><a href="/administrar">
                                 <i class="fa-solid fa-trash"></i>
                             </a></td>
                     </tr>
