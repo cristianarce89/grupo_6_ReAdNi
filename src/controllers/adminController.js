@@ -80,35 +80,22 @@ const adminController = {
         .then((product)  => {
             Products.findAll()
             .then((products)=>{
-                return res.render('administrador', {products})
+                return res.render('/administrar', {products})
             })
         })            
         .catch(error => res.send(error))
     },
-    // delete: (req, res) => {
-    //     Products.findByPk(req.params.id)
-    //     .then(product => {
-    //         res.render('admin/administrador', {product})
-    //     })
-    //     .catch(error => res.send(error))
-    // }
 
     destroy: (req, res) => {
-        Products.destroy({where: {idProduct : req.params.id}, force: true})
-        .then((product) => {
-            return res.render('admin/administrador', {product})
+        const id= req.params.id;
+        Products.destroy({where:{ idProduct : id}})
+        .then(() => {
+            res.redirect('/administrar');          
         })
         .catch(error => res.send(error))
-    },
+    }
 } 
 module.exports = adminController;
-
-
-
-
-
-
-
 
 
     // admin: (req,res) => {

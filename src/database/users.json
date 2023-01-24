@@ -17,14 +17,5 @@
     "direccion": "Cra4",
     "id": "2",
     "imagen": "UsuariosReeadni-1668445503212.png"
-  },
-  {
-    "id": 3,
-    "nombre": "juliana",
-    "email": "juliana@juliana",
-    "password": "123456",
-    "cellphone": "3111564877",
-    "direccion": "cra9 n 500-21",
-    "imagen": "UsuariosReeadni-1668352685314.png"
   }
 ]

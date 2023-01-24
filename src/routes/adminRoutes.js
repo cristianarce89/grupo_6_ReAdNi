@@ -17,13 +17,12 @@ const storage = multer.diskStorage({
 const upload = multer({storage})
 //------------------------------------------------------------------
 
-router.get('/administrar', adminController.list)
-
-router.get('/administrar/productCreate', adminController.new);
-router.post('/administrar/productCreate'/* ,upload.single('imagen') */, adminController.create);
-router.get('/administrar/productDetail/:id', adminController.detail);
-router.get('/administrar/productEdit/:id', adminController.edit);
-router.post('/administrar/update/:id', /* upload.any('imagen') */ adminController.update);
-router.post('/administrar/:id', adminController.destroy);
+router.get('/administrar', adminController.list)//juli
+router.get('/administrar/productCreate', adminController.new);//fabio
+router.post('/administrar/productCreate'/* ,upload.single('imagen') */, adminController.create);//juli
+router.get('/administrar/productDetail/:id', adminController.detail);//fabio
+router.get('/administrar/productEdit/:id', adminController.edit);//david
+router.post('/administrar/update/:id', /* upload.any('imagen') */ adminController.update);//cristian
+router.delete('/administrar/delete/:id', adminController.destroy);//cristian
 
 module.exports = router;
