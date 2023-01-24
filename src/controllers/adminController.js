@@ -1,6 +1,5 @@
 const path = require('path');
 const db = require('../database/models')
-// const product = require('../database/models').Product
 const sequelize = db.sequelize;
 const {op} = require('sequelize')
 
@@ -14,16 +13,19 @@ const adminController = {
             res.render('admin/administrador', {products})             
         })        
     },
+
     new: (req, res) => {
         res.render('productos/productCreate');
     },
+
     detail: (req,res) => {
         Products.findByPk(req.params.id)
         .then(products => {
             res.render('productos/productDetail', {products})
         })
     },
-    //Aqui dispongo las rutas para trabajar con el CRUD
+    
+    //CRUD
     edit: (req,res) => {
         Products.findByPk(req.params.id)
         .then(products => {
@@ -31,7 +33,19 @@ const adminController = {
         })
         .catch(error => res.send(error));
     },
+
+    create: (req,res) => {
+        Products.create ({
+            ...req.body
+        })       
+        .then(() => {
+            res.redirect('/administrar');
+        })           
+        .catch(error => res.send(error))
+    },
+
     update: (req,res) => {
+        const id= req.params.id;
         Products.update( 
             {
             name: req.body.name,
@@ -45,47 +59,14 @@ const adminController = {
             size: req.body.size,
             market: req.body.id_market,
             // imagen: req.body.id.imagen
-        }, {
-            where:{ idProduct:1}
-        })
-        .then(product => {
-            console.log(product)
-            Products.findAll()
+        }, 
+        {where: {idProduct: id}})
             .then(products => {
-                res.render('admin/administrador', {products})
+                res.redirect('/administrar')
             })
-        })
-        .catch(error => res.send(error));
+            .catch(error => res.send(error));
     },
-
-    create: (req,res) => {
-        // Products.create(
-        //     {
-        //         name: req.body.name,
-        //         description: req.body.description,
-        //         priceAnt: parseInt(req.body.priceAnt, 10),
-        //         price: parseInt(req.body.price, 10),
-        //         discount: parseInt(req.body.discount, 10),
-        //         ranking: parseInt(req.body.ranking, 10),
-        //         color: req.body.color,
-        //         category: req.body.category,
-        //         size: parseInt(req.body.size, 10),
-        //         market: req.body.id_market,
-        //         imagen: req.body.id.imagen
-        //     }
-        // )
-        Products.create ({
-            ...req.body
-        })
-        .then((product)  => {
-            Products.findAll()
-            .then((products)=>{
-                return res.render('/administrar', {products})
-            })
-        })            
-        .catch(error => res.send(error))
-    },
-
+    
     destroy: (req, res) => {
         const id= req.params.id;
         Products.destroy({where:{ idProduct : id}})
@@ -97,6 +78,33 @@ const adminController = {
 } 
 module.exports = adminController;
 
+
+
+
+
+
+
+
+    // Products.create(
+    //     {
+    //         name: req.body.name,
+    //         description: req.body.description,
+    //         priceAnt: parseInt(req.body.priceAnt, 10),
+    //         price: parseInt(req.body.price, 10),
+    //         discount: parseInt(req.body.discount, 10),
+    //         ranking: parseInt(req.body.ranking, 10),
+    //         color: req.body.color,
+    //         category: req.body.category,
+    //         size: parseInt(req.body.size, 10),
+    //         market: req.body.id_market,
+    //         imagen: req.body.id.imagen
+    //     }
+    // )
+
+
+
+
+//METODO CRUD CON JSON
 
     // admin: (req,res) => {
     //     //llamo el objeto json y lo paso de un string a un objeto literal

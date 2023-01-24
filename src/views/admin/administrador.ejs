@@ -57,7 +57,6 @@
             <tbody>
                 <!-- aca va el forEach -->
                 <% products.forEach(productsAll => { %> 
-                    <tr>
                         <td>
                             <%= productsAll.idProduct%>
                         </td>
@@ -70,15 +69,20 @@
                         <td><a href="/administrar/productDetail/<%= productsAll.idProduct%> ">
                                 <i class="fa-solid fa-eye"></i>
                             </a></td>
-                        <td><a href="/administrar/productEdit/<%= productsAll.idProduct%> ">
+                        <td>
+                            <!-- <form action="/administrar/productEdit" method="POST" class="formulario" > -->
+                                <a href="/administrar/productEdit/<%= productsAll.idProduct%>">
+                                <!-- <button type="submit"> -->
                                 <i class="fa-solid fa-pen"></i>
-                            </a></td>
+                                </a>
+                                <!-- </button> -->
+                            </form>
+                        </td>
                         <td>
                             <form action="/administrar/delete/<%= productsAll.idProduct%>?_method=delete" method="POST" class="formulario" >
                                 <button type="submit">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
-                                
                             </form>
                         </td>
                     </tr>
