@@ -4,11 +4,11 @@ const path = require('path');
 
 const productsController = require('../controllers/productsController');
 
-//vistas
-router.get('/productCart', productsController.productCart);
-// router.get('/productDetail', productsController.productDetail);
-// router.get('/productList', productsController.productList);
-// router.get('/products', productsController.products);
+//vistas de products
+router.get('/productCart', productsController.productCart);//fabio
+router.get('/productDetail', productsController.productDetail);//david  
+router.get('/productList', productsController.productList);//david
+router.get('/products', productsController.products);//juli
 
 
 module.exports = router;
