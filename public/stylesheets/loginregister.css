@@ -23,7 +23,7 @@ body {
 .login-register-container .login {
   position: relative;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-color: aquamarine;
   background: url("https://i.postimg.cc/d0t5vBh9/fondo-login.jpg");
   background-size: cover;
@@ -39,7 +39,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6));
   box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7);
   width: 45rem;
-  padding: 5rem 3rem;
+  padding: 2rem 2rem;
   border-radius: 1rem;
 }
 
@@ -98,6 +98,11 @@ body {
   margin-top: 30px;
 }
 
+.control_boton { 
+  margin: 15px auto 0 auto;
+  text-align: center;
+}
+
 .control input[type="submit"] {
   background: transparent;
   color: #fff;
@@ -108,9 +113,10 @@ body {
 }
 
 #submit {
-  margin-top: 20px;
-  color: #CBBDDB;
-  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #8f44e4;
+  font-size: 22px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
@@ -143,4 +149,29 @@ body {
 #register a {
   color: #e1e1e1;
   text-decoration: none;
+}
+
+#imagen{
+  display:none;
+}
+
+.boton_add{
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 18rem;
+  height: 20rem;
+  margin-bottom: 2rem;
+}
+
+img {
+  width: 18rem;
+  height: 20rem;
+  border-radius: 50%;
+}
+
+div.errores{
+  color:red;
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4));
+  border-radius: 2rem;
 }
