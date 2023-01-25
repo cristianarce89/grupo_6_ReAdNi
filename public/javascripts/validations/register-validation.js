@@ -4,7 +4,7 @@ window.addEventListener("load", function () {
     this.alert("mensaje de prueba")
 
     formulario.addEventListener("submit", function (e) {
-        e.preventDefault();
+        // e.preventDefault();
 
         let errores = [];
 

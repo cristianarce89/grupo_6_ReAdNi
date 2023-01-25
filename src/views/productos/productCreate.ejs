@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href=/stylesheets/productCreate.css>
     <link rel="stylesheet" href=/stylesheets/footer.css>
+    <script src="/javascripts/validations/productCreate-validation.js"></script>
     <title>Reeadni Creacion de producto</title>
 </head>
 
@@ -23,9 +24,13 @@
       <div class="container titulo">
         <h2 class="products-title">Formulario<br> Creación de productos</h2>
       </div>
+      <div class="errores">
+        <h5>
+        </h5>
+      </div>
       <div class="row nameProduct">
-        <label for="name" class="formulario__label">Nombre del producto</label>
-        <input type="text" id="name" name="name" class="formulario__input">        
+        <input type="text" id="name" name="name" class="formulario__input">
+        <label for="name" class="formulario__label">Nombre del producto</label>        
       </div>
       <div class="row description">
         <label for="description" class="" name="description">Descripción:</label>
