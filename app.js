@@ -6,6 +6,7 @@ const logger = require('morgan');
 const methodOverride = require ('method-override');
 const app = express();
 const session = require('express-session');
+const {body, validationResult} = require('express-validator')   // validaciones con express-validator
 // const userLogsMiddleware = require('./middlewares/userLogs');
 
 // Indicar las vistas
