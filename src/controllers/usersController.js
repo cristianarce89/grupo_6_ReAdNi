@@ -24,6 +24,7 @@ module.exports = {
             nombre: req.body.nombre,
             email: req.body.email,
             password:  bcrypt.hashSync(req.body.password, 10),
+            repetir_password: bcrypt.hashSync(req.body.password, 10),
             cellphone: req.body.cellphone,
             direccion: req.body.direccion,
             imagen: req.file.filename
