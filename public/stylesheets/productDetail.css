@@ -6,6 +6,7 @@
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
+
 body{
     line-height: 1.5;
 }
@@ -15,10 +16,10 @@ body{
 }
 img{
     width: 100%;
-    display: block;
+    display: inline-block;
 }
 .img-display{
-    overflow: hidden;
+    overflow:hidden;
 }
 .img-showcase{
     display: flex;
@@ -32,7 +33,7 @@ img{
     display: flex;
 }
 .img-item{
-    margin: 0.3rem;
+    margin: 4.8px;
 }
 .img-item:nth-child(1),
 .img-item:nth-child(2),
@@ -43,15 +44,15 @@ img{
     opacity: 0.8;
 }
 .product-content{
-    padding: 2rem 1rem;
+    padding: 32px 16px;
 }
 .product-title{
-    font-size: 3rem;
+    font-size: 48px;
     text-transform: capitalize;
     font-weight: 700;
     position: relative;
     color: #12263a;
-    margin: 1rem 0;
+    margin: 16px 0;
 }
 .product-title::after{
     content: "";
@@ -66,12 +67,12 @@ img{
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 14.4px;
     display: inline-block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
     background: #256eff;
     color: #fff;
-    padding: 0 0.3rem;
+    padding: 0 4.8px;
     transition: all 0.5s ease;
 }
 .product-link:hover{
@@ -86,7 +87,7 @@ img{
 }
 .product-price{
     margin: 1rem 0;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 700;
 }
 .product-price span{
@@ -102,24 +103,24 @@ img{
 .product-detail h2{
     text-transform: capitalize;
     color: #12263a;
-    padding-bottom: 0.6rem;
+    padding-bottom: 9.6px;
 }
 .product-detail p{
-    font-size: 0.9rem;
-    padding: 0.3rem;
+    font-size: 14.4px;
+    padding: 4.8px;
     opacity: 0.8;
 }
 .product-detail ul{
-    margin: 1rem 0;
-    font-size: 0.9rem;
+    margin: 16px 0;
+    font-size: 14.4px;
 }
 .product-detail ul li{
     margin: 0;
     list-style: none;
     /* background: url(https://i.postimg.cc/dt2cwkwX/logo-nike.png) left center no-repeat; */
     background-size: 18px;
-    padding-left: 1.7rem;
-    margin: 0.4rem 0;
+    padding-left: 27.2px;
+    margin: 6.4px 0;
     font-weight: 600;
     opacity: 0.9;
 }
@@ -133,17 +134,17 @@ img{
     font-weight: 400;
 }
 .purchase-info{
-    margin: 1.5rem 0;
+    margin: 24px 0;
 }
 .purchase-info input,
 .purchase-info .btn{
     border: 1.5px solid #ddd;
     border-radius: 25px;
     text-align: center;
-    padding: 0.45rem 0.8rem;
+    padding: 7.2px 12.8px;
     outline: 0;
-    margin-right: 0.2rem;
-    margin-bottom: 1rem;
+    margin-right: 3.2px;
+    margin-bottom: 16px;
 }
 .purchase-info input{
     width: 60px;
@@ -173,10 +174,10 @@ img{
     height: 32px;
     color: #000;
     border: 1px solid #000;
-    margin: 0 0.2rem;
+    margin: 0 3.2px;
     border-radius: 50%;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 12.8px;
     transition: all 0.5s ease;
 }
 .social-links a:hover{
@@ -189,7 +190,7 @@ img{
     .cardProductDetail{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1.5rem;
+        grid-gap: 24px;
     }
     .card-wrapper{
         height: 100vh;
@@ -216,7 +217,7 @@ img{
 
 @media ( max-width : 800px) {
     .product-imgs{
-        width: 30rem;
+        width: 480rem;
         margin: 0 auto;
     }
 }

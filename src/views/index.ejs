@@ -4,6 +4,7 @@
 <head>
     <%- include('./partials/head.ejs') %>
         <link href="stylesheets/index.css" rel="stylesheet">
+        <link href="/stylesheets/cardsUp-index.css" rel="stylesheet">
         <!-- libreria de slider movil -->
         <link href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" rel="stylesheet">
         <title>ReeAdNi</title>
@@ -14,9 +15,9 @@
         <!--------- BARRA NAVEGADOR CELULAR Y TABLET ---------->
         <%- include('./partials/headerMobile.ejs') %>
 
-        <!--------- BARRA NAVEGADOR DESKTOP ---------->
+            <!--------- BARRA NAVEGADOR DESKTOP ---------->
 
-        <%- include('./partials/headerDesktop.ejs') %>
+            <%- include('./partials/headerDesktop.ejs') %>
 
                 <!-----------  SECCION 1 CARDS DE HOMBRE - MUJER - NIÑOS ------------------------>
                 <section class="content-section-genero">
@@ -296,6 +297,55 @@
         </div>
     </section>
 
+
+    <!------------------APARTADO DE INTERESES---------------------------------->
+    <div class="container">
+        <!-- CARDS -->
+        <div class="card">
+            <img src="https://i.postimg.cc/RZCtTPTN/jordan1.png" alt="" class="card__img">
+            <!-- <div class="card__content">  -->
+            <div class="card__data">
+                <h1 class="card__title">Nike Air Jordan</h1>
+                <span class="card__preci">$120.000</span>
+                <p class="card__description">Nike Air Jordan Especiales para jugar baloncesto.</p>
+                <a href="#" class="card__button">Mas Información!</a>
+            </div>
+        </div>
+        <!-- CARDS -->
+        <div class="card">
+            <img src="https://i.postimg.cc/nzXg9YWW/jordan2.png" alt="" class="card__img">
+            <!-- <div class="card__content">  -->
+            <div class="card__data">
+                <h1 class="card__title">Nike Air Jordan</h1>
+                <span class="card__preci">$120.000</span>
+                <p class="card__description">Nike Air Jordan Especiales para jugar baloncesto.</p>
+                <a href="#" class="card__button">Mas Información!</a>
+            </div>
+        </div>
+        <!-- CARDS -->
+        <div class="card">
+            <img src="https://i.postimg.cc/RZCtTPTN/jordan1.png" alt="" class="card__img">
+            <!-- <div class="card__content">  -->
+            <div class="card__data">
+                <h1 class="card__title">Nike Air Jordan</h1>
+                <span class="card__preci">$120.000</span>
+                <p class="card__description">Nike Air Jordan Especiales para jugar baloncesto.</p>
+                <a href="#" class="card__button">Mas Información!</a>
+            </div>
+        </div>
+        <!-- CARDS -->
+        <div class="card">
+            <img src="https://i.postimg.cc/nzXg9YWW/jordan2.png" alt="" class="card__img">
+            <!-- <div class="card__content">  -->
+            <div class="card__data">
+                <h1 class="card__title">Nike Air Jordan</h1>
+                <span class="card__preci">$120.000</span>
+                <p class="card__description">Nike Air Jordan Especiales para jugar baloncesto.</p>
+                <a href="#" class="card__button">Mas Información!</a>
+            </div>
+        </div>
+    </div>
+
     <!---------------- OTRO SECTION CON SLIDER -------------------------------->
     <section class="container-destacados">
         <div class="carrousel">
@@ -402,6 +452,7 @@
             <p>disponible</p>
         </div>
     </section>
+
     <!----------------------SlideBar Infinito--------------------->
     <div class="slider-infinito">
         <div class="slider-track">
