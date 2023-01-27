@@ -43,7 +43,7 @@ img {
 /*===== CARD =====*/
 .container {
   margin-top: 3.2rem;
-  height: 48rem;
+  /* height: 48rem; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -77,6 +77,7 @@ img {
   font-size: var(--h1-font-size);
   color: var(--first-color);
   margin-bottom: 0.8rem;
+  padding-right: 1.5rem;
 }
 
 .card__preci {
@@ -91,6 +92,7 @@ img {
   text-align: initial;
   margin-bottom: 2.0rem;
   opacity: 0;
+  font-family: var(--body-font);
 }
 
 .card__button {
