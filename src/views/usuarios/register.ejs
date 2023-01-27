@@ -21,17 +21,15 @@
         <section class="registro">
             <div class="form-container">
                 <a href="/"><i class="fa-solid fa-circle-left fa-2x"></i></a>
-
+            <h1>registro</h1>
             
-
-                <h1>registro</h1>
 
                 <div class="errores">
                     <h5>
                     </h5>
                 </div>
 
-                <form action="/register" method="POST" class="register">
+                <form action="/register" method="POST" class="register" enctype="multipart/form-data"> <!-- el enctype="multipart/form-data" sirve para trabajar con json -->
                     <div class="control">
                         <label for="nombre">Nombre completo</label>
                         <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" required>
@@ -85,7 +83,7 @@
         </section>
     </main>
 
-  <!--   Script para cargar la imagen -->
+<!--   Script para cargar la imagen -->
     <script src="/javascripts/register.js"></script>
 
     <footer class="container-footer">
