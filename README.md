@@ -35,3 +35,10 @@ sprint 5
 https://trello.com/b/hXGr8vBO/sprint-5
 
 sprint 6
+https://trello.com/b/aaOalBMZ/sprint-6
+
+sprint 7
+https://trello.com/b/JSHun1VP/sprint-7
+
+sprint 8
+https://trello.com/b/z0lfeR7E/sprint-8
