@@ -192,3 +192,112 @@ Con estas dos herramientas se pueden hacer cosas muy poderosas. De hecho, cada u
 paquetes que han instalado (Express, EJS, method-override, Multer, etc.) están construidos
 como middlewares. Ahora ya pueden construir los suyos. 😎✌✨
 
+------------------------------------------------------------------------------------------------------------------
+Retrospectiva del sprint 6.
+
+Toda buena base de datos empieza en la mesa de dibujo. Tendrán que armar el Diagrama de Entidades y Relaciones (DER). Piensen en un buen diseño, armen un diagrama legible, con relaciones correctas y las claves foráneas para representarlas. Recuerden que luego deberán implementar Sequelize y que, por lo general, los ORMs como este trabajan mejor con los nombres de tablas en inglés.
+
+comenzar hacer Realizar la planeacion del sprin y trabajajando en equipo Realizar,actuliazar, implementar la retrospectiva y el tablero. Diagrama de base de datos Script de estructura Creación de carpeta Sequelize y archivos de modelos CRUD
+
+hacer mas buscar las consultas necesarias para trabajar en las tablas, mejorando los commit en el github, mojorando las metodos del mysql
+
+continuar haciendo seguir trabajndo juntos, escuchar los aportes, concejos,apoyarnos mas de lo que ya hacemos.
+
+hacer menos no tener pena por que unos saben mas que otros y seguir intentandolo, todos aprenden a su ritmo.
+
+dejar de hacer el silencio, hay que hablar mas, preguntar mas. tenemos que creernos esto y si podemos , dejar lo negativo
+
+analisis de trabajo en equipo.
+
+somos un equipo que desea aprender cada dìa màs, que le tiene miedo a los retos , pero los asume y lo hacemos, hay compañeros mas destacados que otros, pero somos y nos vemos iguales, compartimos y buscamos que todo salga bien.
+
+Las bases de datos son una herramienta que permite que el almacenamiento de los datos crezca de forma escalable y veloz. Puede ser un trabajo arduo (sobretodo si ya teníamos cosas hechas en JSON... 😅), pero el resultado es increíble. No solo es increíble porque nuestra aplicación está lista para crecer radicalmente, sino porque ¡completamos un back-end completo! Pensar, diseñar, implementar una base de datos no es sencillo, pero un buen diseño inicial va a asegurar nuestro éxito en el tiempo. Además, implementarlo en Sequelize nos permite corrernos un poco de SQL y aprovechar todas las prestaciones de un buen ORM. Si llegamos hasta acá, felicitaciones, somos cracks. 😎✌️✨
+
+-------------------------------------------------------------------------------------------------------------------
+Retrospectiva del sprint 7.
+
+Toda buena base de datos empieza en la mesa de dibujo. Tendrán que armar el Diagrama de Entidades y Relaciones (DER). Piensen en un buen diseño, armen un diagrama legible, con relaciones correctas y las claves foráneas para representarlas. Recuerden que luego deberán implementar Sequelize y que, por lo general, los ORMs como este trabajan mejor con los nombres de tablas en inglés.
+
+comenzar hacer
+ Realizar la planeacion del sprin y trabajajando en equipo Realizar,actuliazar, implementar la retrospectiva y el tablero. 
+Validaciones del back-end con Express Validator:
+○ Registro de usuarios.
+○ Login de usuarios.
+○ Creación y modificación de productos.
+○ (Opcional) Resto de los formularios del sitio.
+● Validaciones del front-end con JavaScript:
+○ Registro de usuarios.
+○ Login de usuarios.
+○ Creación y modificación de productos.
+○ (Opcional) Resto de los formularios del sitio.
+
+hacer mas
+ buscar las consultas necesarias para trabajar en las tablas, mejorando los commit en el github, mojorando las metodos del mysql
+
+continuar haciendo 
+seguir trabajndo juntos, escuchar los aportes, concejos,apoyarnos mas de lo que ya hacemos.
+
+hacer menos
+ no tener pena por que unos saben mas que otros y seguir intentandolo, todos aprenden a su ritmo.
+
+dejar de hacer 
+silencio, hay que hablar mas, preguntar mas. tenemos que creernos esto y si podemos , dejar lo negativo
+
+analisis de trabajo en equipo.
+
+somos un equipo que desea aprender cada dìa màs, que le tiene miedo a los retos , pero los asume y lo hacemos, hay compañeros mas destacados que otros, pero somos y nos vemos iguales, compartimos y buscamos que todo salga bien.
+
+Las validaciones son vitales si queremos que nuestro sitio funcione bien a lo largo del tiempo.
+Ya sea por error, o por mala intención, siempre llegarán datos que son inválidos o que de alguna
+manera son incorrecto. Si nos descuidamos y dejamos que pasen, va a ser muy
+difícil que podamos corregir el problema sin terminar con un gran dolor de cabeza. 
+Poquito a poquito y sin darse cuenta están terminando su sitio...
+
+-----------------------------------------------------------------------------------------------------------
+Retrospectiva del sprint 8.
+
+Toda buena base de datos empieza en la mesa de dibujo. Tendrán que armar el Diagrama de Entidades y Relaciones (DER). Piensen en un buen diseño, armen un diagrama legible, con relaciones correctas y las claves foráneas para representarlas. Recuerden que luego deberán implementar Sequelize y que, por lo general, los ORMs como este trabajan mejor con los nombres de tablas en inglés.
+
+comenzar hacer Realizar la planeacion del sprin y trabajajando en equipo Realizar,actuliazar, implementar la retrospectiva y el tablero.
+Endpoints de usuarios:
+○ Listado de usuarios.
+■ (Opcional) Paginado.
+○ Detalle de usuario.
+★ Endpoints de productos:
+○ Listado de productos.
+■ (Opcional) Paginado.
+○ Detalle de producto.
+★ Dashboard del sitio hecho en React:
+○ 3 a 6 paneles simples con totales.
+○ Panel de detalle de último producto o usuario creado.
+○ Panel de categorías con el total de productos de cada una.
+○ Panel con el listado de productos.
+○ (Opcional) Funcionalidades adicionales.
+
+hacer mas
+ buscar las consultas necesarias para trabajar en las tablas, mejorando los commit en el github, mojorando las metodos del mysql
+
+continuar haciendo
+ seguir trabajndo juntos, escuchar los aportes, concejos,apoyarnos mas de lo que ya hacemos.
+
+hacer menos
+ no tener pena por que unos saben mas que otros y seguir intentandolo, todos aprenden a su ritmo.
+
+dejar de hacer 
+ silencio, hay que hablar mas, preguntar mas. tenemos que creernos esto y si podemos , dejar lo negativo
+
+analisis de trabajo en equipo.
+
+somos un equipo que desea aprender cada dìa màs, que le tiene miedo a los retos , pero los asume y lo hacemos, hay compañeros mas destacados que otros, pero somos y nos vemos iguales, compartimos y buscamos que todo salga bien.
+
+Decíamos en el anterior sprint que “nada que valga la pena es fácil de conseguir” y, si llegaron
+hasta aquí, no queda más que aplaudirlos.  Pueden considerarse con orgullo Fullstack
+Developers. 
+La programación se parece mucho a la carpintería y eso es porque si bien es posible entender
+cómo se arma un mueble en la teoría , no es hasta que lo armamos que realmente
+empezamos a internalizar cada pequeño detalle que supone construir ese objeto. 
+No solo eso, así como la carpintería, la programación es un oficio que requiere mucha práctica
+para llegar a ser realmente hábil. En nuestra humilde opinión, hay pocas cosas más
+satisfactorias que encontrar un oficio al que dedicarse con empeño. 
+Esperamos que le hayan agarrado el gusto al mundo de la programación y que este sea el
+comienzo de una gran aventura.
