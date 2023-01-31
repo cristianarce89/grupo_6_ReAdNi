@@ -36,12 +36,17 @@ const productsRoutes = require('./src/routes/productsRoutes');
 const usersRoutes = require('./src/routes/usersRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
 
+//ruta api
+const apiAdminRoutes = require('./src/routes/api/adminRoutes');
+
 //USAR LAS RUTAS
 app.use('/', indexRoutes);
 app.use(productsRoutes);
 app.use(usersRoutes);
 app.use(adminRoutes);
 
+
+app.use('/api', apiAdminRoutes)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
