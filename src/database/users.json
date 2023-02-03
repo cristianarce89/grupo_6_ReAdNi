@@ -1,14 +1,5 @@
 [
   {
-    "id": 1,
-    "nombre": "carlos",
-    "correo": "carlos@carlos.com",
-    "password": "123456",
-    "cellphone": "3111111111",
-    "direccion": "calle 4 n 5-38",
-    "imagen": "carlos.jpg"
-  },
-  {
     "nombre": "Cristian",
     "email": "cristiancamilo_1989@hotmail.com",
     "password": "123456",
@@ -16,6 +7,46 @@
     "cellphone": "3137224934",
     "direccion": "Cra4",
     "id": "2",
-    "imagen": "UsuariosReeadni-1668445503212.png"
+    "imagen": "UsuariosReeadni-1674826563095.jpg"
+  },
+  {
+    "id": 21,
+    "nombre": "juliana ",
+    "email": "juliana@juliana.com",
+    "password": "$2b$10$O4oqOp9Q9gSmZ.yU4XW1I.O8kOn8heYd2xMumgsz84t6mM/q7RP92",
+    "repetir_password": "$2b$10$PVQ/bWXbSiYfSTTmluH/TewaL7aoRzLz4mL3/xIxK14n8S3fa6/au",
+    "cellphone": "3225687948",
+    "direccion": "cra 9 N 15-22",
+    "imagen": "UsuariosReeadni-1674828621040.jpg"
+  },
+  {
+    "id": 22,
+    "nombre": "fabio cruz",
+    "email": "fabiocruz@fabiocruz",
+    "password": "$2b$10$6gWFrUsE5JuDgfrXTXHlS..pbsHP97or/CKLs2v.zsNpZjUvwqvPC",
+    "repetir_password": "$2b$10$PrrqJTZRpir5ZIqRr8xmxO7bxwX80YshtwJIyRPesqhsSPsD6oPzO",
+    "cellphone": "3134878914",
+    "direccion": "cra 500 N 600",
+    "imagen": "UsuariosReeadni-1674830175906.jpg"
+  },
+  {
+    "id": 23,
+    "nombre": "david",
+    "email": "david@david.com",
+    "password": "$2b$10$T3d7Dot.fL.bjIqbHrQeS.d7CDPbO9UkALPj5WmPhd9i6fxmLztdq",
+    "repetir_password": "$2b$10$gMBIEJp264raF8rajW5oDeIQ3xNO.Up.R8D5gWU80ld8qqiEhstaC",
+    "cellphone": "3245789878",
+    "direccion": "cll 5 n 8-39",
+    "imagen": "UsuariosReeadni-1674830330404.jpg"
+  },
+  {
+    "id": 24,
+    "nombre": "carlos",
+    "email": "carlos@carlos.com",
+    "password": "$2b$10$5DwSjfvAf.0NBKMkSbbLe.7ZDcI3jDZjFkuPRpN3fmzv.H9121W1G",
+    "repetir_password": "$2b$10$F8gx3RrjsL6dHNWOQ7R/vuXCboB4xHZs3J04kZjfXu.d7Zg4IaziG",
+    "cellphone": "3137224933",
+    "direccion": "Cra4",
+    "imagen": "UsuariosReeadni-1675116577422.jpg"
   }
 ]

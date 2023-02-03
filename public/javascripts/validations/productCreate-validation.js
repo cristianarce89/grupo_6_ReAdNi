@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
     const formulario = document.querySelector("form.formulario");
 
-    this.alert("mensaje de prueba creacion de productos")
+    // this.alert("mensaje de prueba creacion de productos")
 
     formulario.addEventListener("submit", function (e) {
         // e.preventDefault();

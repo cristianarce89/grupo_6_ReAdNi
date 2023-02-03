@@ -12,10 +12,11 @@
 <body>
     <header>
         <!--------- BARRA NAVEGADOR CELULAR Y TABLET ---------->
-        <%- include('../partials/headerMobile.ejs') %>
-            <!--------- BARRA NAVEGADOR DESKTOP ---------->
-            <%- include('../partials/headerDesktop.ejs') %>
-    </header>
+        <%- include('../partials/headerMobile.ejs') %> 
+    
+        <!--------- BARRA NAVEGADOR DESKTOP ---------->
+        <%- include('../partials/headerDesktop.ejs') %> 
+        </header>
 
     <div class="container productCreate">
         <!-- en el action ponemos la ruta del formulario que va capturar los datos, en enctype es para que los datos viajen-->
@@ -24,8 +25,8 @@
                 <h2 class="products-title">Formulario<br> Actualizacion de productos</h2>
             </div>
             <div class="row nameProduct">
-                <label for="name" class="formulario__label">Nombre del producto</label>
                 <input type="text" id="name" name="name" class="formulario__input" value="<%= products.name %>">
+                <label for="name" class="formulario__label">Nombre del producto</label>                
             </div>
             <div class="row description">
                 <label for="description" class="" name="description" >Descripción:</label>

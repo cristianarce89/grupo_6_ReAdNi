@@ -25,7 +25,7 @@ app.use(session({ secret: 'Proyecto intregrador Readni secreto', resave: false, 
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes PUT, DELETE, en nuestros formularios
+//Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes como PUT, DELETE, en nuestros formularios
 app.use(methodOverride('_method'));
 
 
@@ -36,12 +36,17 @@ const productsRoutes = require('./src/routes/productsRoutes');
 const usersRoutes = require('./src/routes/usersRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
 
+//ruta api
+const apiAdminRoutes = require('./src/routes/api/adminRoutes');
+
 //USAR LAS RUTAS
 app.use('/', indexRoutes);
 app.use(productsRoutes);
 app.use(usersRoutes);
 app.use(adminRoutes);
 
+
+app.use('/api', apiAdminRoutes)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -123,3 +123,16 @@
   background: #d4d3d3;
   padding: 5px 10px;
 }
+
+.container-icon{
+  display: flex;
+}
+
+.fa-2x {
+  font-size: 30px;
+  justify-content: left;
+  margin-bottom: 8px;
+  font-weight: 900;
+  color: #fff;
+}
+

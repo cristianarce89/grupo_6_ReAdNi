@@ -179,7 +179,7 @@ header {
     margin: 1.5rem auto 0 auto;
     padding: 12px 20px;
     border: none;
-    background-color: #7ffacb;
+    background-color: #97d3ef;
     color: var(--bg-color);
     font-size: 1rem;
     font-weight: 500;
@@ -187,7 +187,7 @@ header {
 }
 
 .btn-buy:hover{
-    background: #00f74a;
+    background: #5a90ee;
 }
 
 .close-cart{
@@ -234,21 +234,21 @@ header {
     padding: 10px;
     border: 1px solid var(--text-color);
     transition: 0.4s;
-    background-color: rgb(101, 168, 223);
+    background-color:  rgb(165, 194, 248);
 }
 
 .product-box-mujer:hover{
     padding: 10px;
     border: 1px solid var(--text-color);
     transition: 0.4s;
-    background-color: rgb(247, 159, 200);
+    background-color:  rgb(165, 194, 248);
 }
 
 .product-box-niños:hover{
     padding: 10px;
     border: 1px solid var(--text-color);
     transition: 0.4s;
-    background-color: rgb(144, 236, 152);
+    background-color: rgb(165, 194, 248);
 }
 
 .product-img{
