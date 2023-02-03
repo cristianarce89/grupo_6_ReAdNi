@@ -38,5 +38,15 @@
     "cellphone": "3245789878",
     "direccion": "cll 5 n 8-39",
     "imagen": "UsuariosReeadni-1674830330404.jpg"
+  },
+  {
+    "id": 24,
+    "nombre": "carlos",
+    "email": "carlos@carlos.com",
+    "password": "$2b$10$5DwSjfvAf.0NBKMkSbbLe.7ZDcI3jDZjFkuPRpN3fmzv.H9121W1G",
+    "repetir_password": "$2b$10$F8gx3RrjsL6dHNWOQ7R/vuXCboB4xHZs3J04kZjfXu.d7Zg4IaziG",
+    "cellphone": "3137224933",
+    "direccion": "Cra4",
+    "imagen": "UsuariosReeadni-1675116577422.jpg"
   }
 ]
