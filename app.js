@@ -25,7 +25,7 @@ app.use(session({ secret: 'Proyecto intregrador Readni secreto', resave: false, 
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes PUT, DELETE, en nuestros formularios
+//Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes como PUT, DELETE, en nuestros formularios
 app.use(methodOverride('_method'));
 
 
